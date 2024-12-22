@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have become the president of Math Society from 2023-2024 at NYU Shanghai! 
+I have become the president of Math Society from 2023-2024 at NYU Shanghai!

@@ -34,10 +34,8 @@ shortcuts:
     link: /assets/pdf/projects/Adversarial_Robustness_Theory_Report.pdf
     description: "Report"
 
-
 toc:
   beginning: true
-
 ---
 
 ## Overview
@@ -45,7 +43,6 @@ toc:
 By looking through recent works in adversarial robustness (e.g. Goodfellow et al. (2015); Ma (2018); Zhang et al. (2019); Awasthi et al. (2023)), we start by defining the question of what adversarial robustness is and why it is important. We then consider frameworks for training robust models, and survey theoretical results that provide insights into the fundamental trade-offs between accuracy and robustness. Specifically, Zhang et al. (2019) introduces TRADES, a theory-based algorithm for balancing this trade-off, and Awasthi et al. (2023) introduces a thorough theoretical framework for adversarial robustness theory. Overall, we examine recent advances that improve training by leveraging conditions such as classification-calibrated surrogate losses and the concept of $H$-consistency, thereby guiding the design of robust models that maintain strong theoretical guarantees.
 
 Keywords: Adversarial Robustness, Robust Optimization, TRADES, $H$-Consistency, ClassificationCalibrated Surrogate Loss
-
 
 ## Introduction
 
@@ -56,7 +53,6 @@ A key issue in addressing adversarial robustness is the fundamental trade-off be
 At the same time, the concept of $H$-consistency has emerged as a critical property for surrogate loss functions, ensuring alignment between the surrogate loss and the true classification loss under adversarial settings. This concept guides the choice of training objectives, ensuring that improvements in surrogate loss directly translate into improved adversarial robustness.
 
 The goal of this work is to revisit and connect key theories and results from foundational research on adversarial robustness. By analyzing these contributions, we aim to develop a deeper understanding of both the theoretical and practical aspects of adversarial defenses, ultimately bridging the gap between accuracy and robustness.
-
 
 ## Methodology
 

@@ -2,7 +2,7 @@
 layout: page
 permalink: /education/
 title: Education
-description: Selected courses I have taken. 
+description: Selected courses I have taken.
 nav: true
 nav_order: 4
 display_categories:

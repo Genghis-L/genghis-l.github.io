@@ -6,7 +6,6 @@ description: A collection of my projects on Mathematics and Data Science
 nav: true
 nav_order: 3
 display_categories: [Mathematics, Data Science]
-
 ---
 
 <!-- pages/projects.md -->
