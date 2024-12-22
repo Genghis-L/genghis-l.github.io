@@ -19,3 +19,6 @@ social: true # includes social icons at the bottom of the page
 ---
 
 My name is Kehan (Genghis) Luo (骆可瀚), and I am currently a junior undergraduate at NYU Shanghai, pursuing a double major in Honors Mathematics and Data Science. I am deeply passionate about the future of machine learning and have conducted research in areas such as diffusion models, adversarial training, and transformers, exploring both theoretical and practical approaches. Additionally, I am highly interested in applying machine learning techniques to the financial industry.
+
+
+
