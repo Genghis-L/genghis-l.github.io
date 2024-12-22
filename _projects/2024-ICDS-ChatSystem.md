@@ -3,7 +3,7 @@ layout: distill
 title: Course Project_Chat System
 description: NYUSH 2024 Spring ICDS Course Project
 img: assets/img/2024-ICDS-ChatSystem.png
-importance: 100
+importance: 1 # 1～5
 category: Data Science
 giscus_comments: true
 

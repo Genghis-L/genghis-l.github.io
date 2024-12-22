@@ -8,7 +8,7 @@ children:
   - title: English
     permalink: /assets/pdf/resume/Resume_Kehan-Luo.pdf
   - title: English (Verbose)
-    permalink: /assets/pdf/resume/Resume_Kehan-Luo.pdf
+    permalink: /assets/pdf/resume/Resume_Kehan-Luo_Verbose.pdf
   - title: Chinese
     permalink: /assets/pdf/resume/Resume_Kehan-Luo_Chinese.pdf
 ---

@@ -9,7 +9,6 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>President of <a href="https://wp.nyu.edu/nyushanghai-mathsociety/">Math Society</a> from 2023-2024 </p>
     <p>Email: kl4747@nyu.edu</p>
     <p>Shanghai, New York</p>
 
