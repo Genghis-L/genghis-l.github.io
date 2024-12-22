@@ -2,11 +2,65 @@
 layout: page
 permalink: /education/
 title: Education
-description: Selected Courses I have taken
+description: Selected courses I have taken. 
 nav: true
 nav_order: 4
+display_categories:
+  - Honors Mathematics (NYU)
+  - Data Science (NYU)
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+<!-- pages/education.md -->
+<div class="projects">
+{% if site.enable_project_categories and page.display_categories %}
+  <!-- Display categorized educations -->
+  {% for category in page.display_categories %}
+  <a id="{{ category }}" href=".#{{ category }}">
+    <h2 class="category">{{ category }}</h2>
+  </a>
+  {% assign categorized_educations = site.educations | where: "category", category %}
+  {% assign sorted_educations = categorized_educations | sort: "importance" %}
+  <!-- Generate cards for each project -->
+  {% if page.horizontal %}
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2">
+    {% for project in sorted_educations %}
+      {% include projects_horizontal.liquid %}
+    {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <div class="row row-cols-1 row-cols-md-3">
+    {% for project in sorted_educations %}
+      {% include projects.liquid %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endfor %}
 
-Organize your courses by years, topics, or universities, however you like!
+{% else %}
+
+<!-- Display educations without categories -->
+
+{% assign sorted_educations = site.educations | sort: "importance" %}
+
+  <!-- Generate cards for each project -->
+
+{% if page.horizontal %}
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2">
+    {% for project in sorted_educations %}
+      {% include projects_horizontal.liquid %}
+    {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <div class="row row-cols-1 row-cols-md-3">
+    {% for project in sorted_educations %}
+      {% include projects.liquid %}
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endif %}
+</div>
