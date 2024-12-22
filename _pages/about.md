@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: [NYU Shanghai](https://shanghai.nyu.edu/). Junior Undergraduate. Honors Mathematics & Data Science.
+subtitle: <a href="https://shanghai.nyu.edu/">NYU Shanghai</a>. Junior Undergraduate. Honors Mathematics & Data Science.
 
 profile:
   align: right
