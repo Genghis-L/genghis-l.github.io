@@ -10,5 +10,3 @@ children:
   - title: English (Verbose)
     permalink: /assets/pdf/yxiao-cv/yxiao-cv-verbose.pdf
 ---
-
-
