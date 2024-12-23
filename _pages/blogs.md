@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: /blog/
-title: Blog
+permalink: /blogs/
+title: Blogs
 nav: false # hide the blog section
 nav_order: 1
 pagination:
