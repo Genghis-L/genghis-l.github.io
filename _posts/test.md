@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: distill
 title: Test Post
 description: test
 tags: AI
