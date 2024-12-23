@@ -20,7 +20,10 @@ authors:
 
 shortcuts:
   - name: Poster
+    icon: fa-solid fa-file
     link: /assets/pdf/projects/2023_Spring-Symposium/2023_Spring-Symposium_Poster.pdf
+
+---
 
 <d-contents>
   <nav class="l-text figcaption">
@@ -29,8 +32,6 @@ shortcuts:
     <div><a href="#presentation">Presentation</a></div>
   </nav>
 </d-contents>
-
----
 
 ## Overview
 

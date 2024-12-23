@@ -7,7 +7,7 @@ importance: 3 # 1～5
 category: Data Science
 giscus_comments: true
 
-bibliography: references.bib
+bibliography: projects.bib
 comments: true
 hidden: false
 
