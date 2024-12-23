@@ -6,7 +6,7 @@ tags: AI
 categories: Data Science
 date: 2024-12-23
 giscus_comments: true
-related_posts: false
+bibliography: projects.bib
 ---
 
-Here is a test post.
+Here is a test post. <d-cite key="ma_towards_2018"></d-cite>
