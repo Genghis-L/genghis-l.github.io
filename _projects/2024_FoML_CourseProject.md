@@ -81,34 +81,33 @@ $$
 \phi^{\prime}(\theta, h)=\sup _{\delta \in \delta^*(\theta)} h^T \nabla_\theta g(\theta, \delta)
 $$
 
-If \( \delta^*(\theta) \) is a singleton, then \( \phi(\theta) \) is differentiable, and its gradient satisfies:
+If \( \delta^_(\theta) \) is a singleton, then \( \phi(\theta) \) is differentiable, and its gradient satisfies:
 \[
-\nabla \phi(\theta) = \nabla_{\theta} g(\theta, \delta^*(\theta)).
+\nabla \phi(\theta) = \nabla\_{\theta} g(\theta, \delta^_(\theta)).
 \]
 
 The paper establish the following Corollary, which states that the negative gradient \\
-\( -\nabla_{\theta} L(\theta, x + \bar{\delta}, y) \) provides a valid descent direction for the outer optimization problem. Formally, let \( \bar{\delta} \) be a maximizer of \( \max_{\delta \in S} L(\theta, x + \delta, y) \). Then, as long as \( \nabla_{\theta} L(\theta, x + \bar{\delta}, y) \) is nonzero, we have:
+\( -\nabla*{\theta} L(\theta, x + \bar{\delta}, y) \) provides a valid descent direction for the outer optimization problem. Formally, let \( \bar{\delta} \) be a maximizer of \( \max*{\delta \in S} L(\theta, x + \delta, y) \). Then, as long as \( \nabla*{\theta} L(\theta, x + \bar{\delta}, y) \) is nonzero, we have:
 \[
-\phi'(\theta, h) = \sup_{\delta \in \delta^*(\theta)} h^T \nabla_{\theta} L(\theta, x + \delta, y) \geq h^T h = \| \nabla_{\theta} L(\theta, x + \bar{\delta}, y) \|_2^2 \geq 0.
+\phi'(\theta, h) = \sup*{\delta \in \delta^\*(\theta)} h^T \nabla*{\theta} L(\theta, x + \delta, y) \geq h^T h = \| \nabla*{\theta} L(\theta, x + \bar{\delta}, y) \|_2^2 \geq 0.
 \]
 This result guarantees that \( -\nabla_{\theta} L(\theta, x + \bar{\delta}, y) \) is a descent direction for the max-function \( \phi(\theta) \), and also the saddle point problem defined earlier in this section.
 
 % In practice, the inner maximization is typically approximated using iterative methods such as Projected Gradient Descent (PGD), which ensures that $\delta^*$ remains within the allowable set $\mathcal{S}$.
 
-We then utilize all the results above to give a principled approach to compute gradients for robust optimization efficiently. 
+We then utilize all the results above to give a principled approach to compute gradients for robust optimization efficiently.
 
 Note that the ReLU activation function and max-pooling operations in neural networks may cause the objective function to be non-differentiable at certain points. However, these points are of measure zero and thus do not pose practical issues. Additionally, the inner maximization problem can be non-concave, but this can be addressed by selecting a concave subset of the domain and applying algorithms within that subset.
-
 
 In summary, robust optimization reduces the challenge of adversarial robustness to solving a well-defined optimization problem. By explicitly considering worst-case perturbations and leveraging theoretical tools like Danskin's theorem, we can design algorithms that effectively optimize for adversarial robustness.
 
 However, a deeper issue arises from the saddle point optimization formulation itself:
 \[
-\min_{\theta} \mathbb{E}_{(x, y) \sim \mathcal{D}} \left[ \max_{\delta \in S} \mathcal{L}(\theta, x + \delta, y) \right].
+\min*{\theta} \mathbb{E}*{(x, y) \sim \mathcal{D}} \left[ \max_{\delta \in S} \mathcal{L}(\theta, x + \delta, y) \right].
 \]
-This formulation focuses exclusively on minimizing the loss at adversarially perturbed inputs while neglecting the natural data distribution. The primary consequence is that the model is inherently forced to \textbf{overfit adversarial examples}, which introduces unnecessary complexity into the decision boundary. 
+This formulation focuses exclusively on minimizing the loss at adversarially perturbed inputs while neglecting the natural data distribution. The primary consequence is that the model is inherently forced to \textbf{overfit adversarial examples}, which introduces unnecessary complexity into the decision boundary.
 
-To illustrate this, consider the geometric impact of adversarial examples on the decision boundary. In the absence of adversarial perturbations, the model can rely on a relatively simple decision boundary, such as a linear separator, to classify natural data points. However, adversarial examples expand the input space that must be correctly classified, particularly in regions defined by the \(\ell_\infty\)-balls around natural data points. As a result, the decision boundary becomes significantly more complex and nonlinear to account for the adversarial perturbations, shown in Figure 1.
+To illustrate this, consider the geometric impact of adversarial examples on the decision boundary. In the absence of adversarial perturbations, the model can rely on a relatively simple decision boundary, such as a linear separator, to classify natural data points. However, adversarial examples expand the input space that must be correctly classified, particularly in regions defined by the \(\ell\_\infty\)-balls around natural data points. As a result, the decision boundary becomes significantly more complex and nonlinear to account for the adversarial perturbations, shown in Figure 1.
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
@@ -126,16 +125,18 @@ This phenomenon further increases the dependency on model capacity. To learn the
 
 ### Establishment of Theoretical Framework and Improvement on the Adversarial Training
 
-The key motivation of \cite{zhang_theoretically_2019}'s work is to address the overfitting issue and the lack of theoretical framework in adversarial training. All the detailed work has been done and proved in binary classification problem. Define $\mathcal{R}_{\mathrm{rob}}$ to characterize the robustness of a score function $f: \mathcal{X} \rightarrow \mathbb{R}$ by:
+The key motivation of \cite{zhang*theoretically_2019}'s work is to address the overfitting issue and the lack of theoretical framework in adversarial training. All the detailed work has been done and proved in binary classification problem. Define $\mathcal{R}*{\mathrm{rob}}$ to characterize the robustness of a score function $f: \mathcal{X} \rightarrow \mathbb{R}$ by:
 
 $$
 \mathcal{R}_{\text {rob }}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\left\{\exists \boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon) \text { s.t. } f\left(\boldsymbol{X}^{\prime}\right) Y \leq 0\right\}}
 $$
+
 Write the natural generalization error as:
 
 $$
 \mathcal{R}_{\text {nat }}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
 $$
+
 Note that the two errors satisfy $\mathcal{R}_{\text {rob }}(f) \geq \mathcal{R}_{\text {nat }}(f)$ for all $f$ the robust error is equal to the natural error when $\epsilon=0$.
 
 Introduce the boundary error defined as:
@@ -144,11 +145,13 @@ $$
 \mathcal{R}_{\text {bdy }}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{\boldsymbol{X} \in \mathbb{B}(\mathrm{DB}(f), \epsilon), f(\boldsymbol{X}) Y>0\}}
 $$
 
-It can be easily seen that 
+It can be easily seen that
+
 $$
 \mathcal{R}_{\text {rob }}(f)=\mathcal{R}_{\text {nat }}(f)+\mathcal{R}_{\text {bdy }}(f)
 $$
-as the first term $\mathcal{R}_{\text {nat }}(f)$ includes all misclassified points regarding the accuracy, and the second term $\mathcal{R}_{\text {bdy }}(f)$ includes all the points that are classified correctly but within $\mathbb{B}(\mathrm{DB}(f), \epsilon)$, regarding the robustness. 
+
+as the first term $\mathcal{R}_{\text {nat }}(f)$ includes all misclassified points regarding the accuracy, and the second term $\mathcal{R}_{\text {bdy }}(f)$ includes all the points that are classified correctly but within $\mathbb{B}(\mathrm{DB}(f), \epsilon)$, regarding the robustness.
 
 There is in fact a trade-off between $\mathcal{R}_{\text {nat }}(f)$ and $\mathcal{R}_{\text {bdy }}(f)$, showcased by the following toy example: Consider the case $(X, Y) \sim \mathcal{D}$, where the marginal distribution over the sample space $\mathcal{X}$ is a uniform distribution over $[0,1]$, and for $k=0,1, \ldots,\left\lceil\frac{1}{2 \epsilon}-1\right\rceil$,
 
@@ -172,35 +175,38 @@ $$
   </div>
 </div>
 
-The results are shown in Figure 2. 
+The results are shown in Figure 2.
 
-Our goal is then to derive a good upper bound on $\mathcal{R}_{\text {rob }}(f)$ that we want to minimize, in the sense that a free hyper-parameter can be introduced to manipulate the trade-off between accuracy and robustness, and therefore a good algorithm can be derived to minimize this upper bound. We need several tools to achieve this goal. 
+Our goal is then to derive a good upper bound on $\mathcal{R}_{\text {rob }}(f)$ that we want to minimize, in the sense that a free hyper-parameter can be introduced to manipulate the trade-off between accuracy and robustness, and therefore a good algorithm can be derived to minimize this upper bound. We need several tools to achieve this goal.
 
 Introduce the surrogate loss $\mathcal{R}_\phi(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \phi(f(\boldsymbol{X}) Y)$. Formally, for $\eta \in[0,1]$, define the conditional $\phi$-risk by
 
 $$
 H(\eta):=\inf _{\alpha \in \mathbb{R}} C_\eta(\alpha):=\inf _{\alpha \in \mathbb{R}}(\eta \phi(\alpha)+(1-\eta) \phi(-\alpha)),
 $$
+
 and define $H^{-}(\eta):=\inf _{\alpha(2 \eta-1) \leq 0} C_\eta(\alpha)$.
 
 The classification-calibrated condition requires that imposing the constraint that $\alpha$ has an inconsistent sign with the Bayes decision rule $\operatorname{sign}(2 \eta-1)$ leads to a strictly larger $\phi$-risk:
 
-\textbf{Assumption 1 (Classification-Calibrated Condition):} 
+\textbf{Assumption 1 (Classification-Calibrated Condition):}
 Assume that the surrogate loss $\phi$ is classification-calibrated, meaning that for any $\eta \neq 1 / 2, H^{-}(\eta)>H(\eta)$, i.e., Bayesian estimator is always the minimizer.
 
-One remark is that classfication-calibrated is a weak condition on the surrogate loss, by which ensures a rich class. Surrogate losses like Hinge loss, Sigmoid loss, Exponential loss, and Logistic loss are within this class. 
+One remark is that classfication-calibrated is a weak condition on the surrogate loss, by which ensures a rich class. Surrogate losses like Hinge loss, Sigmoid loss, Exponential loss, and Logistic loss are within this class.
 
 Define the $\psi$ transform of classification-calibrated surrogate loss $\phi$ : $[0,1] \rightarrow[0, \infty)$ by
+
 $$
 \psi=\widetilde{\psi}^{* *}
 $$
+
 where $\widetilde{\psi}(\theta):=H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$.
 In fact, the function $\psi(\theta)$ is the largest convex lower bound on $\tilde{\psi}$. The value $H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$ characterizes how close the surrogate loss $\phi$ is to the class of non-classification-calibrated losses.
 
 \textbf{Lemma 2.1 [\cite{bartlett_convexity_2006}]: }
 Under Assumption 1, the function $\psi$ has the following properties: $\psi$ is non-decreasing, continuous, convex on $[0,1]$ and $\psi(0)=0$.
 
-By using good properties of this $\psi$ transform, we can derive a tight upper bound in the sense of the following two theorems: 
+By using good properties of this $\psi$ transform, we can derive a tight upper bound in the sense of the following two theorems:
 
 \textbf{Theorem 3.1 [\cite{zhang_theoretically_2019}]: }
 Let $\mathcal{R}_\phi(f):=\mathbb{E}_\phi[f(\mathbf{X}) Y]$ and $R_\phi^*:=\min _f \mathcal{R}_\phi(f)$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
@@ -238,26 +244,27 @@ For multi-class problems, a surrogate loss is calibrated if minimizers of the su
 $$
 \min _f \mathbb{E}\left\{\mathcal{L}(f(\boldsymbol{X}), \boldsymbol{Y})+\max _{\boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \mathcal{L}\left(f(\boldsymbol{X}), f\left(\boldsymbol{X}^{\prime}\right)\right) / \lambda\right\}
 $$
+
 where $f(\boldsymbol{X})$ is the output vector of learning model (with soft-max operator in the top layer for the cross-entropy loss $\mathcal{L}(\cdot, \cdot)), \boldsymbol{Y}$ is the label-indicator vector, and $\lambda>0$ is the regularization parameter.
 
 ### H-Consistency
 
-Adversarial training methods, such as TRADES, rely on surrogate loss functions because they are differentiable and convex, therefore, easier to optimize. 
-While surrogate loss functions are bounded, it is essential to ensure that minimizing the surrogate loss also leads to minimizing the true target loss. This connection is where the concept of \textit{$H$-consistency} plays a pivotal role.\\ 
+Adversarial training methods, such as TRADES, rely on surrogate loss functions because they are differentiable and convex, therefore, easier to optimize.
+While surrogate loss functions are bounded, it is essential to ensure that minimizing the surrogate loss also leads to minimizing the true target loss. This connection is where the concept of \textit{$H$-consistency} plays a pivotal role.\\
 $H$-consistency is formally defined as:
 \[
 \forall h \in H, \quad \mathcal{R}_{\text{target}}(h) - \mathcal{R}_{\text{target}, H} \leq f(\mathcal{R}_{\phi}(h) - \mathcal{R}_{\phi, H}),
 \]
 where \( \mathcal{R}_{\text{target}} \) represents the true target loss, \( \mathcal{R}_{\phi} \) is the surrogate loss, and \( H \) is the hypothesis space. Intuitively, this inequality ensures that the gap between the true target loss and the surrogate loss is bounded by a function of their respective differences. In simpler terms, as the surrogate loss decreases, the true target loss cannot increase within a given set of models \( H \). This property is critical for ensuring that adversarial training methods remain effective in practice.
 
-However, TRADES's surrogate loss has been shown to fail the $H$-consistency bound in certain scenarios \cite{awasthi_theoretically_2023}, particularly in multi-class classification tasks. In these cases, models optimized with TRADES can yield inaccurate predictions despite achieving low surrogate loss values, leading to unfavorable hypothesis being selected. 
+However, TRADES's surrogate loss has been shown to fail the $H$-consistency bound in certain scenarios \cite{awasthi_theoretically_2023}, particularly in multi-class classification tasks. In these cases, models optimized with TRADES can yield inaccurate predictions despite achieving low surrogate loss values, leading to unfavorable hypothesis being selected.
 
-To address this limitation, a family surrogate loss function called \textit{Smooth Adversarial Losses} was introduced in \cite{awasthi_theoretically_2023}. Which satisfies the $H$-consistency and bounded under:
-$$\Phi_{smooth} \leq \Phi(y h(x)) + \nu \left| y h(x) - \inf_{x' : \|x - x'\| \leq \gamma} y h(x') \right|$$
-% One of the 
+To address this limitation, a family surrogate loss function called \textit{Smooth Adversarial Losses} was introduced in \cite{awasthi*theoretically_2023}. Which satisfies the $H$-consistency and bounded under:
+$$\Phi*{smooth} \leq \Phi(y h(x)) + \nu \left| y h(x) - \inf*{x' : \|x - x'\| \leq \gamma} y h(x') \right|$$
+% One of the
 % \[
-% f(\mathcal{R}_{\phi}(h) - \mathcal{R}_{\phi, H}) = \mathcal{R}_{\widetilde{\Psi}_{\text{sum}}^\rho}(h) - \mathcal{R}^*_{\widetilde{\Psi}_{\text{sum}}^\rho, \mathcal{H}} + \mathcal{M}_{\widetilde{\Psi}_{\text{sum}}^\rho, \mathcal{H}} - \mathcal{M}_{\ell_\gamma, \mathcal{H}},
+% f(\mathcal{R}*{\phi}(h) - \mathcal{R}_{\phi, H}) = \mathcal{R}_{\widetilde{\Psi}_{\text{sum}}^\rho}(h) - \mathcal{R}^\*_{\widetilde{\Psi}_{\text{sum}}^\rho, \mathcal{H}} + \mathcal{M}_{\widetilde{\Psi}_{\text{sum}}^\rho, \mathcal{H}} - \mathcal{M}_{\ell*\gamma, \mathcal{H}},
 % \]
-% where \( \mathcal{R}_{\widetilde{\Psi}_{\text{sum}}^\rho} \), \( \mathcal{M}_{\widetilde{\Psi}_{\text{sum}}^\rho, \mathcal{H}} \), and \( \mathcal{M}_{\ell_\gamma, \mathcal{H}} \) represent specific terms related to the smoothness of the adversarial loss and its relationship to the hypothesis space \( H \).
+% where \( \mathcal{R}*{\widetilde{\Psi}_{\text{sum}}^\rho} \), \( \mathcal{M}_{\widetilde{\Psi}_{\text{sum}}^\rho, \mathcal{H}} \), and \( \mathcal{M}_{\ell\_\gamma, \mathcal{H}} \) represent specific terms related to the smoothness of the adversarial loss and its relationship to the hypothesis space \( H \).
 
 Building on this improvement, the \textit{Principled Smooth Adversarial Loss (PSAL)} algorithm was developed. PSAL outperforms TRADES and other state-of-the-art methods in terms of both clean accuracy and robustness to adversarial perturbations. This demonstrates that addressing the $H$-consistency limitation of TRADES can lead to more reliable adversarial training frameworks.
