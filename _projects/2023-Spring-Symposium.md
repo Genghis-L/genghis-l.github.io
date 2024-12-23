@@ -18,20 +18,23 @@ authors:
     affiliations:
       name: NYU Shanghai
 
+toc:
+  beginning: true
+
 shortcuts:
   - name: Poster
     icon: fa-solid fa-file
     link: /assets/pdf/projects/2023_Spring-Symposium/2023_Spring-Symposium_Poster.pdf
-    
+
 ---
 
-<d-contents>
+<!-- <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
     <div><a href="#overview">Overview</a></div>
     <div><a href="#presentation">Presentation</a></div>
   </nav>
-</d-contents>
+</d-contents> -->
 
 ## Overview
 
