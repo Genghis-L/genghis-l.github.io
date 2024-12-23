@@ -72,15 +72,15 @@ The goal of this work is to revisit and connect key theories and results from fo
 As shown in Ma (2018) <d-cite key="ma_towards_2018"></d-cite>, the robust optimization objective can be formalized as:
 
 $$
-\min _\theta \rho(\theta), \quad \text { where } \rho(\theta)=\mathbb{E}_{(x, y) \sim \mathcal{D}}\left[\max _{\delta \in \mathcal{S}} \mathcal{L}(\theta, x+\delta, y)\right]
+\min_\theta \rho(\theta), \quad \text { where } \rho(\theta)=\mathbb{E}_{(x, y) \sim \mathcal{D}}\left[\max_{\delta \in \mathcal{S}} \mathcal{L}(\theta, x+\delta, y)\right]
 $$
 
 where $\mathcal{S} \subseteq \mathbb{R}^d$ represents the set of allowable perturbations. Minimizing $\rho(\theta)$ ensures that the loss remains small for all allowed adversarial perturbations. Thus, the search for robust models reduces to solving a well-defined optimization problem.
 
-Standard optimization techniques, such as Stochastic Gradient Descent (SGD), cannot be directly applied to this saddle-point formulation because the adversarial loss involves solving the inner maximization problem at each iteration. The paper applies Danskin's Theorem to address this issue. Specifically, for a differentiable function $g(\theta, \delta)$, where $\delta \in S$, the max-function $\phi(\theta)=\max _{\delta \in S} g(\theta, \delta)$ has a well-defined gradient, given by:
+Standard optimization techniques, such as Stochastic Gradient Descent (SGD), cannot be directly applied to this saddle-point formulation because the adversarial loss involves solving the inner maximization problem at each iteration. The paper applies Danskin's Theorem to address this issue. Specifically, for a differentiable function $g(\theta, \delta)$, where $\delta \in S$, the max-function $\phi(\theta)=\max_{\delta \in S} g(\theta, \delta)$ has a well-defined gradient, given by:
 
 $$
-\phi^{\prime}(\theta, h)=\sup _{\delta \in \delta^*(\theta)} h^T \nabla_\theta g(\theta, \delta)
+\phi^{\prime}(\theta, h)=\sup_{\delta \in \delta^*(\theta)} h^T \nabla_\theta g(\theta, \delta)
 $$
 
 If $ \delta^\*(\theta) $ is a singleton, then $ \phi(\theta) $ is differentiable, and its gradient satisfies:
@@ -134,13 +134,13 @@ This phenomenon further increases the dependency on model capacity. To learn the
 The key motivation of <d-cite key="zhang_theoretically_2019"></d-cite>'s work is to address the overfitting issue and the lack of theoretical framework in adversarial training. All the detailed work has been done and proved in binary classification problem. Define $\mathcal{R}_{\mathrm{rob}}$ to characterize the robustness of a score function $f: \mathcal{X} \rightarrow \mathbb{R}$ by:
 
 $$
-\mathcal{R}_{\text {rob }}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\left\{\exists \boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon) \text { s.t. } f\left(\boldsymbol{X}^{\prime}\right) Y \leq 0\right\}}
+\mathcal{R}_{\text{rob}}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\left\{\exists \boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon) \text { s.t. } f\left(\boldsymbol{X}^{\prime}\right) Y \leq 0\right\}}
 $$
 
 Write the natural generalization error as:
 
 $$
-\mathcal{R}_{\text {nat }}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
+\mathcal{R}_{\text{nat}}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
 $$
 
 Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
@@ -148,18 +148,18 @@ Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{
 Introduce the boundary error defined as:
 
 $$
-\mathcal{R}_{\text {bdy }}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{\boldsymbol{X} \in \mathbb{B}(\mathrm{DB}(f), \epsilon), f(\boldsymbol{X}) Y>0\}}
+\mathcal{R}_{\text{bdy}}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{\boldsymbol{X} \in \mathbb{B}(\mathrm{DB}(f), \epsilon), f(\boldsymbol{X}) Y>0\}}
 $$
 
 It can be easily seen that
 
 $$
-\mathcal{R}_{\text {rob }}(f)=\mathcal{R}_{\text {nat }}(f)+\mathcal{R}_{\text {bdy }}(f)
+\mathcal{R}_{\text{rob}}(f)=\mathcal{R}_{\text{nat}}(f)+\mathcal{R}_{\text{bdy}}(f)
 $$
 
-as the first term $\mathcal{R}_{\text{nat}}(f)$ includes all misclassified points regarding the accuracy, and the second term $\mathcal{R}_{\text {bdy }}(f)$ includes all the points that are classified correctly but within $\mathbb{B}(\mathrm{DB}(f), \epsilon)$, regarding the robustness.
+as the first term $\mathcal{R}_{\text{nat}}(f)$ includes all misclassified points regarding the accuracy, and the second term $\mathcal{R}_{\text{bdy}}(f)$ includes all the points that are classified correctly but within $\mathbb{B}(\mathrm{DB}(f), \epsilon)$, regarding the robustness.
 
-There is in fact a trade-off between $\mathcal{R}_{\text {nat }}(f)$ and $\mathcal{R}_{\text {bdy }}(f)$, showcased by the following toy example: Consider the case $(X, Y) \sim \mathcal{D}$, where the marginal distribution over the sample space $\mathcal{X}$ is a uniform distribution over $[0,1]$, and for $k=0,1, \ldots,\left\lceil\frac{1}{2 \epsilon}-1\right\rceil$,
+There is in fact a trade-off between $\mathcal{R}_{\text{nat}}(f)$ and $\mathcal{R}_{\text{bdy}}(f)$, showcased by the following toy example: Consider the case $(X, Y) \sim \mathcal{D}$, where the marginal distribution over the sample space $\mathcal{X}$ is a uniform distribution over $[0,1]$, and for $k=0,1, \ldots,\left\lceil\frac{1}{2 \epsilon}-1\right\rceil$,
 
 $$
 \begin{aligned}
@@ -182,7 +182,7 @@ $$
 
 The results are shown in Figure 2.
 
-Our goal is then to derive a good upper bound on $\mathcal{R}_{\text {rob }}(f)$ that we want to minimize, in the sense that a free hyper-parameter can be introduced to manipulate the trade-off between accuracy and robustness, and therefore a good algorithm can be derived to minimize this upper bound. We need several tools to achieve this goal.
+Our goal is then to derive a good upper bound on $\mathcal{R}_{\text{rob}}(f)$ that we want to minimize, in the sense that a free hyper-parameter can be introduced to manipulate the trade-off between accuracy and robustness, and therefore a good algorithm can be derived to minimize this upper bound. We need several tools to achieve this goal.
 
 Introduce the surrogate loss $\mathcal{R}_\phi(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \phi(f(\boldsymbol{X}) Y)$. Formally, for $\eta \in[0,1]$, define the conditional $\phi$-risk by
 
@@ -214,31 +214,31 @@ Under Assumption 1, the function $\psi$ has the following properties: $\psi$ is 
 By using good properties of this $\psi$ transform, we can derive a tight upper bound in the sense of the following two theorems:
 
 **Theorem 3.1 [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
-Let $\mathcal{R}_\phi(f):=\mathbb{E}_\phi[f(\mathbf{X}) Y]$ and $R_\phi^*:=\min _f \mathcal{R}_\phi(f)$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
+Let $\mathcal{R}_\phi(f):=\mathbb{E}_\phi[f(\mathbf{X}) Y]$ and $R_\phi^*:=\min_f \mathcal{R}_\phi(f)$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
 
 $$
 \begin{gathered}
-\mathcal{R}_{\text {rob }}(f)-\mathcal{R}_{\text {nat }}^*=\mathcal{R}_{\text {nat }}(f)-\mathcal{R}_{\text {nat }}^*+\mathcal{R}_{\text {bdy }}(f) \\
+\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*=\mathcal{R}_{\text{nat}}(f)-\mathcal{R}_{\text{nat}}^*+\mathcal{R}_{\text{bdy}}(f) \\
 \leq \psi^{-1}\left(\mathcal{R}_\phi(f)-\mathcal{R}_\phi^*\right)+\operatorname{Pr}[\mathbf{X} \in \mathbb{B}(\mathrm{DB}(f), \epsilon), f(\mathbf{X}) Y>0] \\
-\leq \psi^{-1}\left(\mathcal{R}_\phi(f)-\mathcal{R}_\phi^*\right)+\mathbb{E}\left(\max _{\mathbf{X}^{\prime} \in \mathbb{B}(\mathbf{X}, \epsilon)} \phi\left(f\left(\mathbf{X}^{\prime}\right) f(\mathbf{X}) / \lambda\right)\right)
+\leq \psi^{-1}\left(\mathcal{R}_\phi(f)-\mathcal{R}_\phi^*\right)+\mathbb{E}\left(\max_{\mathbf{X}^{\prime} \in \mathbb{B}(\mathbf{X}, \epsilon)} \phi\left(f\left(\mathbf{X}^{\prime}\right) f(\mathbf{X}) / \lambda\right)\right)
 \end{gathered}
 $$
 
 **Theorem 3.2 [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
-Suppose that $|\mathcal{X}| \geq 2$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(x) \rightarrow 0$ as $x \rightarrow+\infty$, any $\xi>0$, and any $\theta \in[0,1]$, there exists a probability distribution on $\mathcal{X} \times\{ \pm 1\}$, a function $f: \mathbb{R}^d \rightarrow \mathbb{R}$, and a regularization parameter $\lambda>0$ such that $\mathcal{R}_{\text {rob }}(f)-\mathcal{R}_{\text {nat }}^*=\theta$ and
+Suppose that $|\mathcal{X}| \geq 2$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(x) \rightarrow 0$ as $x \rightarrow+\infty$, any $\xi>0$, and any $\theta \in[0,1]$, there exists a probability distribution on $\mathcal{X} \times\{ \pm 1\}$, a function $f: \mathbb{R}^d \rightarrow \mathbb{R}$, and a regularization parameter $\lambda>0$ such that $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*=\theta$ and
 
 $$
 \begin{gathered}
-\psi\left(\theta-\mathbb{E} \max _{\boldsymbol{x}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \phi\left(f\left(\boldsymbol{X}^{\prime}\right) f(\boldsymbol{X}) / \lambda\right)\right) \leq \mathcal{R}_\phi(f)-\mathcal{R}_\phi^* \\
-\leq \psi\left(\theta-\mathbb{E} \max _{\boldsymbol{x}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \phi\left(f\left(\boldsymbol{X}^{\prime}\right) f(\boldsymbol{X}) / \lambda\right)\right)+\xi
+\psi\left(\theta-\mathbb{E} \max_{\boldsymbol{x}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \phi\left(f\left(\boldsymbol{X}^{\prime}\right) f(\boldsymbol{X}) / \lambda\right)\right) \leq \mathcal{R}_\phi(f)-\mathcal{R}_\phi^* \\
+\leq \psi\left(\theta-\mathbb{E} \max_{\boldsymbol{x}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \phi\left(f\left(\boldsymbol{X}^{\prime}\right) f(\boldsymbol{X}) / \lambda\right)\right)+\xi
 \end{gathered}
 $$
 
 **TRADES Algorithm [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
-Optimization on Upper Bound Theorems 3.1 and 3.2 shed light on algorithmic designs of adversarial defenses. In order to minimize $\mathcal{R}_{\text {rob }}(f)-\mathcal{R}_{\text {nat }}^*$, the theorems suggest minimizing ${ }^a$
+Optimization on Upper Bound Theorems 3.1 and 3.2 shed light on algorithmic designs of adversarial defenses. In order to minimize $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*$, the theorems suggest minimizing ${ }^a$
 
 $$
-\min _f \mathbb{E}\{\underbrace{\phi(f(\boldsymbol{X}) Y)}_{\text {for accuracy }}+\underbrace{\max _{\boldsymbol{\boldsymbol { X } ^ { \prime } \in \mathbb { B } ( \boldsymbol { X } , \epsilon )}} \phi\left(f(\boldsymbol{X}) f\left(\boldsymbol{X}^{\prime}\right) / \lambda\right)}_{\text {regularization for robustness }}\}
+\min_f \mathbb{E}\{\underbrace{\phi(f(\boldsymbol{X}) Y)}_{\text {for accuracy }}+\underbrace{\max_{\boldsymbol{\boldsymbol { X } ^ { \prime } \in \mathbb { B } ( \boldsymbol { X } , \epsilon )}} \phi\left(f(\boldsymbol{X}) f\left(\boldsymbol{X}^{\prime}\right) / \lambda\right)}_{\text {regularization for robustness }}\}
 $$
 
 Heuristically, [<d-cite key="zhang_theoretically_2019"></d-cite>] use two heuristics to achieve more general defenses:
@@ -247,7 +247,7 @@ b) approximately solving the mini-max problem via alternating gradient descent.
 For multi-class problems, a surrogate loss is calibrated if minimizers of the surrogate risk are also minimizers of the $0-1$ risk [\cite{pires_multiclass_2016}]. Examples of multi-class calibrated loss include cross-entropy loss. Algorithmically, [<d-cite key="zhang_theoretically_2019"></d-cite>] extend the problem to the case of multi-class classifications by replacing $\phi$ with a multi-class calibrated loss $\mathcal{L}(\cdot, \cdot)$ :
 
 $$
-\min _f \mathbb{E}\left\{\mathcal{L}(f(\boldsymbol{X}), \boldsymbol{Y})+\max _{\boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \mathcal{L}\left(f(\boldsymbol{X}), f\left(\boldsymbol{X}^{\prime}\right)\right) / \lambda\right\}
+\min_f \mathbb{E}\left\{\mathcal{L}(f(\boldsymbol{X}), \boldsymbol{Y})+\max_{\boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \mathcal{L}\left(f(\boldsymbol{X}), f\left(\boldsymbol{X}^{\prime}\right)\right) / \lambda\right\}
 $$
 
 where $f(\boldsymbol{X})$ is the output vector of learning model (with soft-max operator in the top layer for the cross-entropy loss $\mathcal{L}(\cdot, \cdot)), \boldsymbol{Y}$ is the label-indicator vector, and $\lambda>0$ is the regularization parameter.
