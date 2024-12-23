@@ -18,6 +18,9 @@ authors:
     affiliations:
       name: NYU Shanghai
 
+toc:
+  beginning: true
+
 shortcuts:
   - name: Poster
     icon: fa-solid fa-file

@@ -8,8 +8,6 @@ category: Data Science
 giscus_comments: true
 
 bibliography: projects.bib
-comments: true
-hidden: false
 
 authors:
   - name: Kehan (Genghis) Luo
@@ -34,9 +32,16 @@ shortcuts:
     link: /assets/pdf/projects/Adversarial_Robustness_Theory_Report.pdf
     description: "Report"
 
-toc:
-  beginning: true
 ---
+
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div><a href="#overview">Overview</a></div>
+    <div><a href="#introduction">Introduction</a></div>
+    <div><a href="#methodology">Methodology</a></div>
+  </nav>
+</d-contents>
 
 ## Overview
 
