@@ -80,25 +80,25 @@ where $\mathcal{S} \subseteq \mathbb{R}^d$ represents the set of allowable pertu
 Standard optimization techniques, such as Stochastic Gradient Descent (SGD), cannot be directly applied to this saddle-point formulation because the adversarial loss involves solving the inner maximization problem at each iteration. The paper applies Danskin's Theorem to address this issue. Specifically, for a differentiable function $g(\theta, \delta)$, where $\delta \in S$, the max-function $\phi(\theta)=\max_{\delta \in S} g(\theta, \delta)$ has a well-defined gradient, given by:
 
 $$
-\phi^{\prime}(\theta, h)=\sup_{\delta \in \delta^*(\theta)} h^T \nabla_\theta g(\theta, \delta)
+\phi^{\prime}(\theta, h)=\sup_{\delta \in \delta^{*}(\theta)} h^T \nabla_\theta g(\theta, \delta)
 $$
 
-If $ \delta^\*(\theta) $ is a singleton, then $ \phi(\theta) $ is differentiable, and its gradient satisfies:
+If $\delta^\*(\theta)$ is a singleton, then $\phi(\theta)$ is differentiable, and its gradient satisfies:
 
 $$
-\nabla \phi(\theta) = \nabla_{\theta} g(\theta, \delta^*(\theta)).
+\nabla \phi(\theta) = \nabla_{\theta} g(\theta, \delta^{*}(\theta)).
 $$
 
 The paper establish the following Corollary, which states that the negative gradient
-$-\nabla*{\theta} L(\theta, x + \bar{\delta}, y)$ provides a valid descent direction for the outer optimization problem. Formally, let $ \bar{\delta} $ be a maximizer of $ \max\*{\delta \in S} L(\theta, x + \delta, y) $. Then, as long as $ \nabla\_{\theta} L(\theta, x + \bar{\delta}, y) $ is nonzero, we have:
+$-\nabla*{\theta} L(\theta, x + \bar{\delta}, y)$ provides a valid descent direction for the outer optimization problem. Formally, let $\bar{\delta}$ be a maximizer of $\max_{\delta \in S} L(\theta, x + \delta, y)$. Then, as long as $\nabla\_{\theta} L(\theta, x + \bar{\delta}, y)$ is nonzero, we have:
 
 $$
-\phi'(\theta, h) = \sup_{\delta \in \delta^*(\theta)} h^T \nabla_{\theta} L(\theta, x + \delta, y) \geq h^T h = \| \nabla_{\theta} L(\theta, x + \bar{\delta}, y) \|_2^2 \geq 0.
+\phi'(\theta, h) = \sup_{\delta \in \delta^{*}(\theta)} h^T \nabla_{\theta} L(\theta, x + \delta, y) \geq h^T h = \| \nabla_{\theta} L(\theta, x + \bar{\delta}, y) \|_2^2 \geq 0.
 $$
 
 This result guarantees that $ -\nabla\_{\theta} L(\theta, x + \bar{\delta}, y) $ is a descent direction for the max-function $ \phi(\theta) $, and also the saddle point problem defined earlier in this section.
 
-In practice, the inner maximization is typically approximated using iterative methods such as Projected Gradient Descent (PGD), which ensures that $\delta^*$ remains within the allowable set $\mathcal{S}$.
+In practice, the inner maximization is typically approximated using iterative methods such as Projected Gradient Descent (PGD), which ensures that $\delta^{*}$ remains within the allowable set $\mathcal{S}$.
 
 We then utilize all the results above to give a principled approach to compute gradients for robust optimization efficiently.
 
@@ -134,13 +134,13 @@ This phenomenon further increases the dependency on model capacity. To learn the
 The key motivation of <d-cite key="zhang_theoretically_2019"></d-cite>'s work is to address the overfitting issue and the lack of theoretical framework in adversarial training. All the detailed work has been done and proved in binary classification problem. Define $\mathcal{R}_{\mathrm{rob}}$ to characterize the robustness of a score function $f: \mathcal{X} \rightarrow \mathbb{R}$ by:
 
 $$
-\mathcal{R}_{\text{rob}}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\left\{\exists \boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon) \text { s.t. } f\left(\boldsymbol{X}^{\prime}\right) Y \leq 0\right\}}
+\mathcal{R}_{\text{rob}}(f) \coloneqq \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\left\{\exists \boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon) \text { s.t. } f\left(\boldsymbol{X}^{\prime}\right) Y \leq 0\right\}}
 $$
 
 Write the natural generalization error as:
 
 $$
-\mathcal{R}_{\text{nat}}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
+\mathcal{R}_{\text{nat}}(f) \coloneqq \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
 $$
 
 Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
@@ -148,7 +148,7 @@ Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{
 Introduce the boundary error defined as:
 
 $$
-\mathcal{R}_{\text{bdy}}(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{\boldsymbol{X} \in \mathbb{B}(\mathrm{DB}(f), \epsilon), f(\boldsymbol{X}) Y>0\}}
+\mathcal{R}_{\text{bdy}}(f) \coloneqq \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{\boldsymbol{X} \in \mathbb{B}(\mathrm{DB}(f), \epsilon), f(\boldsymbol{X}) Y>0\}}
 $$
 
 It can be easily seen that
@@ -163,7 +163,7 @@ There is in fact a trade-off between $\mathcal{R}_{\text{nat}}(f)$ and $\mathcal
 
 $$
 \begin{aligned}
-\eta(x) & :=\operatorname{Pr}(Y=1 \mid X=x) \\
+\eta(x) &  \coloneqq \operatorname{Pr}(Y=1 \mid X=x) \\
 & = \begin{cases}0, & x \in[2 k \epsilon,(2 k+1) \epsilon) \\
 1, & x \in[(2 k+1) \epsilon,(2 k+2) \epsilon)\end{cases}
 \end{aligned}
@@ -184,13 +184,13 @@ The results are shown in Figure 2.
 
 Our goal is then to derive a good upper bound on $\mathcal{R}_{\text{rob}}(f)$ that we want to minimize, in the sense that a free hyper-parameter can be introduced to manipulate the trade-off between accuracy and robustness, and therefore a good algorithm can be derived to minimize this upper bound. We need several tools to achieve this goal.
 
-Introduce the surrogate loss $\mathcal{R}_\phi(f):=\mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \phi(f(\boldsymbol{X}) Y)$. Formally, for $\eta \in[0,1]$, define the conditional $\phi$-risk by
+Introduce the surrogate loss $\mathcal{R}_\phi(f) \coloneqq \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \phi(f(\boldsymbol{X}) Y)$. Formally, for $\eta \in[0,1]$, define the conditional $\phi$-risk by
 
 $$
-H(\eta):=\inf_{\alpha \in \mathbb{R}} C_\eta(\alpha):=\inf_{\alpha \in \mathbb{R}}(\eta \phi(\alpha)+(1-\eta) \phi(-\alpha)),
+H(\eta) \coloneqq \inf_{\alpha \in \mathbb{R}} C_\eta(\alpha) \coloneqq \inf_{\alpha \in \mathbb{R}}(\eta \phi(\alpha)+(1-\eta) \phi(-\alpha)),
 $$
 
-and define $H^{-}(\eta):=\inf_{\alpha(2 \eta-1) \leq 0} C_\eta(\alpha)$.
+and define $H^{-}(\eta) \coloneqq \inf_{\alpha(2 \eta-1) \leq 0} C_\eta(\alpha)$.
 
 The classification-calibrated condition requires that imposing the constraint that $\alpha$ has an inconsistent sign with the Bayes decision rule $\operatorname{sign}(2 \eta-1)$ leads to a strictly larger $\phi$-risk:
 
@@ -205,7 +205,7 @@ $$
 \psi=\widetilde{\psi}^{* *}
 $$
 
-where $\widetilde{\psi}(\theta):=H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$.
+where $\widetilde{\psi}(\theta) \coloneqq H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$.
 In fact, the function $\psi(\theta)$ is the largest convex lower bound on $\tilde{\psi}$. The value $H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$ characterizes how close the surrogate loss $\phi$ is to the class of non-classification-calibrated losses.
 
 **Lemma 2.1 [\cite{bartlett_convexity_2006}]:**
@@ -214,28 +214,28 @@ Under Assumption 1, the function $\psi$ has the following properties: $\psi$ is 
 By using good properties of this $\psi$ transform, we can derive a tight upper bound in the sense of the following two theorems:
 
 **Theorem 3.1 [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
-Let $\mathcal{R}_\phi(f):=\mathbb{E}_\phi[f(\mathbf{X}) Y]$ and $R_\phi^*:=\min_f \mathcal{R}_\phi(f)$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
+Let $\mathcal{R}_\phi(f) \coloneqq \mathbb{E}_\phi[f(\mathbf{X}) Y]$ and $R_\phi^{*} \coloneqq \min_f \mathcal{R}_\phi(f)$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
 
 $$
 \begin{gathered}
-\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*=\mathcal{R}_{\text{nat}}(f)-\mathcal{R}_{\text{nat}}^*+\mathcal{R}_{\text{bdy}}(f) \\
-\leq \psi^{-1}\left(\mathcal{R}_\phi(f)-\mathcal{R}_\phi^*\right)+\operatorname{Pr}[\mathbf{X} \in \mathbb{B}(\mathrm{DB}(f), \epsilon), f(\mathbf{X}) Y>0] \\
-\leq \psi^{-1}\left(\mathcal{R}_\phi(f)-\mathcal{R}_\phi^*\right)+\mathbb{E}\left(\max_{\mathbf{X}^{\prime} \in \mathbb{B}(\mathbf{X}, \epsilon)} \phi\left(f\left(\mathbf{X}^{\prime}\right) f(\mathbf{X}) / \lambda\right)\right)
+\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^{*}=\mathcal{R}_{\text{nat}}(f)-\mathcal{R}_{\text{nat}}^{*}+\mathcal{R}_{\text{bdy}}(f) \\
+\leq \psi^{-1}\left(\mathcal{R}_\phi(f)-\mathcal{R}_\phi^{*}\right)+\operatorname{Pr}[\mathbf{X} \in \mathbb{B}(\mathrm{DB}(f), \epsilon), f(\mathbf{X}) Y>0] \\
+\leq \psi^{-1}\left(\mathcal{R}_\phi(f)-\mathcal{R}_\phi^{*}\right)+\mathbb{E}\left(\max_{\mathbf{X}^{\prime} \in \mathbb{B}(\mathbf{X}, \epsilon)} \phi\left(f\left(\mathbf{X}^{\prime}\right) f(\mathbf{X}) / \lambda\right)\right)
 \end{gathered}
 $$
 
 **Theorem 3.2 [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
-Suppose that $|\mathcal{X}| \geq 2$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(x) \rightarrow 0$ as $x \rightarrow+\infty$, any $\xi>0$, and any $\theta \in[0,1]$, there exists a probability distribution on $\mathcal{X} \times\{ \pm 1\}$, a function $f: \mathbb{R}^d \rightarrow \mathbb{R}$, and a regularization parameter $\lambda>0$ such that $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*=\theta$ and
+Suppose that $|\mathcal{X}| \geq 2$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(x) \rightarrow 0$ as $x \rightarrow+\infty$, any $\xi>0$, and any $\theta \in[0,1]$, there exists a probability distribution on $\mathcal{X} \times\{ \pm 1\}$, a function $f: \mathbb{R}^d \rightarrow \mathbb{R}$, and a regularization parameter $\lambda>0$ such that $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^{*}=\theta$ and
 
 $$
 \begin{gathered}
-\psi\left(\theta-\mathbb{E} \max_{\boldsymbol{x}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \phi\left(f\left(\boldsymbol{X}^{\prime}\right) f(\boldsymbol{X}) / \lambda\right)\right) \leq \mathcal{R}_\phi(f)-\mathcal{R}_\phi^* \\
+\psi\left(\theta-\mathbb{E} \max_{\boldsymbol{x}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \phi\left(f\left(\boldsymbol{X}^{\prime}\right) f(\boldsymbol{X}) / \lambda\right)\right) \leq \mathcal{R}_\phi(f)-\mathcal{R}_\phi^{*} \\
 \leq \psi\left(\theta-\mathbb{E} \max_{\boldsymbol{x}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \phi\left(f\left(\boldsymbol{X}^{\prime}\right) f(\boldsymbol{X}) / \lambda\right)\right)+\xi
 \end{gathered}
 $$
 
 **TRADES Algorithm [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
-Optimization on Upper Bound Theorems 3.1 and 3.2 shed light on algorithmic designs of adversarial defenses. In order to minimize $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*$, the theorems suggest minimizing ${ }^a$
+Optimization on Upper Bound Theorems 3.1 and 3.2 shed light on algorithmic designs of adversarial defenses. In order to minimize $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^{*}$, the theorems suggest minimizing ${ }^a$
 
 $$
 \min_f \mathbb{E}\{\underbrace{\phi(f(\boldsymbol{X}) Y)}_{\text {for accuracy }}+\underbrace{\max_{\boldsymbol{\boldsymbol { X } ^ { \prime } \in \mathbb { B } ( \boldsymbol { X } , \epsilon )}} \phi\left(f(\boldsymbol{X}) f\left(\boldsymbol{X}^{\prime}\right) / \lambda\right)}_{\text {regularization for robustness }}\}
@@ -250,28 +250,26 @@ $$
 \min_f \mathbb{E}\left\{\mathcal{L}(f(\boldsymbol{X}), \boldsymbol{Y})+\max_{\boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \mathcal{L}\left(f(\boldsymbol{X}), f\left(\boldsymbol{X}^{\prime}\right)\right) / \lambda\right\}
 $$
 
-where $f(\boldsymbol{X})$ is the output vector of learning model (with soft-max operator in the top layer for the cross-entropy loss $\mathcal{L}(\cdot, \cdot)), \boldsymbol{Y}$ is the label-indicator vector, and $\lambda>0$ is the regularization parameter.
+where $f(\boldsymbol{X})$ is the output vector of learning model (with soft-max operator in the top layer for the cross-entropy loss $\mathcal{L}(\cdot, \cdot)$, $\boldsymbol{Y}$) is the label-indicator vector, and $\lambda>0$ is the regularization parameter.
 
 ### H-Consistency
 
 Adversarial training methods, such as TRADES, rely on surrogate loss functions because they are differentiable and convex, therefore, easier to optimize.
-While surrogate loss functions are bounded, it is essential to ensure that minimizing the surrogate loss also leads to minimizing the true target loss. This connection is where the concept of \textit{$H$-consistency} plays a pivotal role.\\
+While surrogate loss functions are bounded, it is essential to ensure that minimizing the surrogate loss also leads to minimizing the true target loss. This connection is where the concept of *$H$-consistency* plays a pivotal role.\\
 $H$-consistency is formally defined as:
 
 $$
 \forall h \in H, \quad \mathcal{R}_{\text{target}}(h) - \mathcal{R}_{\text{target}, H} \leq f(\mathcal{R}_{\phi}(h) - \mathcal{R}_{\phi, H}),
 $$
 
-where $ \mathcal{R}_{\text{target}} $ represents the true target loss, $ \mathcal{R}_{\phi} $ is the surrogate loss, and $ H $ is the hypothesis space. Intuitively, this inequality ensures that the gap between the true target loss and the surrogate loss is bounded by a function of their respective differences. In simpler terms, as the surrogate loss decreases, the true target loss cannot increase within a given set of models $ H $. This property is critical for ensuring that adversarial training methods remain effective in practice.
+where $\mathcal{R}_{\text{target}}$ represents the true target loss, $\mathcal{R}_{\phi}$ is the surrogate loss, and $H$ is the hypothesis space. Intuitively, this inequality ensures that the gap between the true target loss and the surrogate loss is bounded by a function of their respective differences. In simpler terms, as the surrogate loss decreases, the true target loss cannot increase within a given set of models $H$. This property is critical for ensuring that adversarial training methods remain effective in practice.
 
 However, TRADES's surrogate loss has been shown to fail the $H$-consistency bound in certain scenarios <d-cite key="awasthi_theoretically_2023"></d-cite>, particularly in multi-class classification tasks. In these cases, models optimized with TRADES can yield inaccurate predictions despite achieving low surrogate loss values, leading to unfavorable hypothesis being selected.
 
-To address this limitation, a family surrogate loss function called \textit{Smooth Adversarial Losses} was introduced in <d-cite key="awasthi_theoretically_2023"></d-cite>. Which satisfies the $H$-consistency and bounded under:
+To address this limitation, a family surrogate loss function called *Smooth Adversarial Losses* was introduced in <d-cite key="awasthi_theoretically_2023"></d-cite>. Which satisfies the $H$-consistency and bounded under:
 $$\Phi_{smooth} \leq \Phi(y h(x)) + \nu \left| y h(x) - \inf_{x' : \|x - x'\| \leq \gamma} y h(x') \right|$$
 
-$\text{sum}^\rho, \mathcal{H}$, and $ \mathcal{M}_{\ell_\gamma, \mathcal{H}} $ represent specific terms related to the smoothness of the adversarial loss and its relationship to the hypothesis space $ H $.
-
-Building on this improvement, the \textit{Principled Smooth Adversarial Loss (PSAL)} algorithm was developed. PSAL outperforms TRADES and other state-of-the-art methods in terms of both clean accuracy and robustness to adversarial perturbations. This demonstrates that addressing the $H$-consistency limitation of TRADES can lead to more reliable adversarial training frameworks.
+Building on this improvement, the *Principled Smooth Adversarial Loss (PSAL)* algorithm was developed. PSAL outperforms TRADES and other state-of-the-art methods in terms of both clean accuracy and robustness to adversarial perturbations. This demonstrates that addressing the $H$-consistency limitation of TRADES can lead to more reliable adversarial training frameworks.
 
 ## Future Work
 
