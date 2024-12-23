@@ -18,9 +18,6 @@ authors:
     affiliations:
       name: NYU Shanghai
 
-toc:
-  beginning: true
-
 shortcuts:
   - name: Presentation Video
     link: https://www.youtube.com/watch?v=4Y151WKQukI&t=159s

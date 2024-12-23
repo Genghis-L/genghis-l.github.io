@@ -31,7 +31,6 @@ shortcuts:
   - name: Report
     link: /assets/pdf/projects/Adversarial_Robustness_Theory_Report.pdf
     description: "Report"
-
 ---
 
 <d-contents>

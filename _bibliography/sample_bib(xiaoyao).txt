@@ -1,0 +1,36 @@
+@inproceedings{10.1145/3651890.3672217,
+  abbr={SIGCOMM'24},
+  author={Wang, Yuejie and Men, Qiutong and Xiao, Yao and Chen, Yongting and Liu, Guyue},
+  title={ConfMask: Enabling Privacy-Preserving Configuration Sharing via Anonymization},
+  year={2024},
+  booktitle={Proceedings of the ACM SIGCOMM 2024 Conference},
+  pages={465--483},
+  numpages={19},
+  keywords={configuration sharing, topology anonymity, route anonymity},
+  location={Sydney, NSW, Australia},
+  series={ACM SIGCOMM '24},
+  abstract={
+    Real-world network configurations play a critical role in network management and
+    research tasks. While valuable, data holders of ten hesitate to share them due to
+    business and privacy concerns. Existing methods are deficient in concealing the
+    implicit information that can be inferred from configurations, such as topology and
+    routing paths. To address this, we present ConfMask, a novel framework designed to
+    systematically anonymize network topology and routing paths in configurations. Our
+    approach tackles key privacy, utility, and scalability challenges, which arise from
+    the strong dependency between different datasets and complex routing protocols. Our
+    anonymization algorithm is scalable to large networks and effectively mitigates
+    de-anonymization risk. Moreover, it maintains essential network properties such as
+    reachability, waypointing and multi-path consistency, making it suitable for a wide
+    range of downstream tasks. Compared to existing dataplane anonymization algorithm
+    (i.e., NetHide), ConfMask reduces ~75% specification differences between the
+    original and the anonymized networks.
+  },
+  doi={10.1145/3651890.3672217},
+  url={https://doi.org/10.1145/3651890.3672217},
+  html={https://doi.org/10.1145/3651890.3672217},
+  pdf={projects/confmask.pdf},
+  code={https://github.com/ConfMask/ConfMask},
+  video={https://youtu.be/xIbgbZtuO7Q},
+  bibtex_show={true},
+  selected={true}
+}
