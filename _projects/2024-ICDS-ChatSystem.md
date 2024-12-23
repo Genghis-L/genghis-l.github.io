@@ -18,15 +18,22 @@ authors:
     affiliations:
       name: NYU Shanghai
 
+toc:
+  beginning: true
+
 shortcuts:
   - name: Presentation Video
     link: https://www.youtube.com/watch?v=4Y151WKQukI&t=159s
   - name: Code
     link: https://github.com/Genghis-L/Spring-2024-ICDS/tree/main/Final%20Projects
-
-toc:
-  beginning: true
 ---
+
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div><a href="#overview">Overview</a></div>
+  </nav>
+</d-contents>
 
 ## Overview
 
