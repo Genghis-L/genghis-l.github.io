@@ -89,8 +89,8 @@ $$
 \nabla \phi(\theta) = \nabla_{\theta} g(\theta, \delta^*(\theta)).
 $$
 
-The paper establish the following Corollary, which states that the negative gradient 
-$-\nabla*{\theta} L(\theta, x + \bar{\delta}, y)$ provides a valid descent direction for the outer optimization problem. Formally, let $ \bar{\delta} $ be a maximizer of $ \max*{\delta \in S} L(\theta, x + \delta, y) $. Then, as long as $ \nabla\_{\theta} L(\theta, x + \bar{\delta}, y) $ is nonzero, we have:
+The paper establish the following Corollary, which states that the negative gradient
+$-\nabla*{\theta} L(\theta, x + \bar{\delta}, y)$ provides a valid descent direction for the outer optimization problem. Formally, let $ \bar{\delta} $ be a maximizer of $ \max\*{\delta \in S} L(\theta, x + \delta, y) $. Then, as long as $ \nabla\_{\theta} L(\theta, x + \bar{\delta}, y) $ is nonzero, we have:
 
 $$
 \phi'(\theta, h) = \sup_{\delta \in \delta^*(\theta)} h^T \nabla_{\theta} L(\theta, x + \delta, y) \geq h^T h = \| \nabla_{\theta} L(\theta, x + \bar{\delta}, y) \|_2^2 \geq 0.
