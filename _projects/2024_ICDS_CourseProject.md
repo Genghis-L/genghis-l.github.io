@@ -2,7 +2,7 @@
 layout: distill
 title: Course Project_Chat System
 description: NYUSH 2024 Spring ICDS Course Project
-img: assets/img/2024-ICDS-ChatSystem.png
+img: assets/img/projects/2024_ICDS_CourseProject.webp
 importance: 1 # 1～5
 category: Data Science
 giscus_comments: true
@@ -19,9 +19,11 @@ authors:
       name: NYU Shanghai
 
 shortcuts:
-  - name: Presentation Video
+  - name: Video
+    icon: fa-solid fa-video
     link: https://www.youtube.com/watch?v=4Y151WKQukI&t=159s
   - name: Code
+    icon: fa-brands fa-github
     link: https://github.com/Genghis-L/Spring-2024-ICDS/tree/main/Final%20Projects
 ---
 
