@@ -19,7 +19,7 @@ course_information:
   Semester: Spring 2024
   Outline: >
     Physical Derivation of PDEs, Linear 1st-order PDEs, Wave Equations, Diffusion Equations, Reflection Methods, BVP, Fourier Representation, Laplace Equations, Green's Representation, Distribution Transform
-  Textbook: <a href="https://www.amazon.com/Partial-Differential-Equations-Walter-Strauss/dp/0470054565">Partial Differential - Equations An Introduction [2nd Edition] (Walter A. Strauss)</a>
+  Textbook: Partial Differential - Equations An Introduction [2nd Edition] (Walter A. Strauss)
 
 grade:
   letter: "A"
