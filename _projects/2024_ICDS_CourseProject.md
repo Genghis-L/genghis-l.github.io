@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: Course Project_Chat System
+title: Chat System
 description: NYUSH 2024 Spring ICDS Course Project
 img: assets/img/projects/2024_ICDS_CourseProject.webp
 importance: 1 # 1～5
