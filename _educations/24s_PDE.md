@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Partial Differential Equations
-description: Math-SHU. 263
-importance: 1 # 1~5
+description: MATH-SHU. 263
+importance: 3 # 1~5
 category: [Honors Mathematics (NYU)]
 pretty_table: true
 
@@ -12,7 +12,7 @@ shortcuts:
     link: /assets/pdf/educations/24s_PDE/24s_PDE_syllabus.pdf
   - name: Notes
     icon: fa-solid fa-file
-    link: /assets/pdf/educations/24s_PDE/24s_PDE_note.pdf
+    link: /assets/pdf/educations/24s_PDE/24s_PDE_notes.pdf
 
 course_information:
   Instructor: <a href="https://shanghai.nyu.edu/academics/faculty/directory/zhuo-cheng-xiao">Zhuocheng Xiao</a>
