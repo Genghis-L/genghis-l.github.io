@@ -90,7 +90,7 @@ $$
 $$
 
 The paper establish the following Corollary, which states that the negative gradient
-$-\nabla{\theta} L(\theta, x + \bar{\delta}, y)$ provides a valid descent direction for the outer optimization problem. Formally, let $\bar{\delta}$ be a maximizer of $\max_{\delta \in S} L(\theta, x + \delta, y)$. Then, as long as $\nabla\_{\theta} L(\theta, x + \bar{\delta}, y)$ is nonzero, we have:
+$-\nabla_{\theta} L(\theta, x + \bar{\delta}, y)$ provides a valid descent direction for the outer optimization problem. Formally, let $\bar{\delta}$ be a maximizer of $\max_{\delta \in S} L(\theta, x + \delta, y)$. Then, as long as $\nabla\_{\theta} L(\theta, x + \bar{\delta}, y)$ is nonzero, we have:
 
 $$
 \phi'(\theta, h) = \sup_{\delta \in \delta^*(\theta)} h^T \nabla_{\theta} L(\theta, x + \delta, y) \geq h^T h = \| \nabla_{\theta} L(\theta, x + \bar{\delta}, y) \|_2^2 \geq 0.
@@ -143,7 +143,9 @@ $$
 \mathcal{R}_{\text{nat}}(f) := \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
 $$
 
-Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
+Note that the two errors satisfy 
+$\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ 
+for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
 
 Introduce the boundary error defined as:
 
@@ -157,7 +159,13 @@ $$
 \mathcal{R}_{\text{rob}}(f)=\mathcal{R}_{\text{nat}}(f)+\mathcal{R}_{\text{bdy}}(f)
 $$
 
-as the first term $\mathcal{R}_{\text{nat}}(f)$ includes all misclassified points regarding the accuracy, and the second term $\mathcal{R}_{\text{bdy}}(f)$ includes all the points that are classified correctly but within $\mathbb{B}(\mathrm{DB}(f), \epsilon)$, regarding the robustness.
+as the first term 
+$\mathcal{R}_{\text{nat}}(f)$ 
+includes all misclassified points regarding the accuracy, and the second term 
+$\mathcal{R}_{\text{bdy}}(f)$ 
+includes all the points that are classified correctly but within 
+$\mathbb{B}(\mathrm{DB}(f), \epsilon)$, 
+regarding the robustness.
 
 There is in fact a trade-off between $\mathcal{R}_{\text{nat}}(f)$ and $\mathcal{R}_{\text{bdy}}(f)$, showcased by the following toy example: Consider the case $(X, Y) \sim \mathcal{D}$, where the marginal distribution over the sample space $\mathcal{X}$ is a uniform distribution over $[0,1]$, and for $k=0,1,\ldots,\left\lceil \frac{1}{2\epsilon} - 1 \right\rceil$,
 
