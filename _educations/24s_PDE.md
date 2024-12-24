@@ -13,16 +13,13 @@ shortcuts:
   - name: Notes
     icon: fa-solid fa-file
     link: /assets/pdf/educations/24s_PDE/24s_PDE_note.pdf
-  - name: Textbook
-    icon: fa-solid fa-file
-    link: /assets/pdf/educations/24s_PDE/24s_PDE_textbook.pdf
 
 course_information:
   Instructor: <a href="https://shanghai.nyu.edu/academics/faculty/directory/zhuo-cheng-xiao">Zhuocheng Xiao</a>
   Semester: Spring 2024
   Outline: >
     Physical Derivation of PDEs, Linear 1st-order PDEs, Wave Equations, Diffusion Equations, Reflection Methods, BVP, Fourier Representation, Laplace Equations, Green's Representation, Distribution Transform
-  Textbook: "Partial Differential Equations: An Introduction (2nd Edition). (Walter A. Strauss)"
+  Textbook: <a href="https://www.amazon.com/Partial-Differential-Equations-Walter-Strauss/dp/0470054565">Partial Differential":" Equations An Introduction [2nd Edition] (Walter A. Strauss)</a>
 
 grade:
   letter: "A"
