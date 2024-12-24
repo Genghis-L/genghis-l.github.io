@@ -8,12 +8,12 @@ category: Data Science
 giscus_comments: true
 
 authors:
-  - name: Kehan Luo
+  - name: Kehan (Genghis) Luo
     url: "https://Genghis-L.github.io/"
     email: kl4747@nyu.edu
     affiliations:
       name: NYU Shanghai
-  - name: Rongyao Li
+  - name: Rongyao (Charlie) Li
     email: rl4785@nyu.edu
     affiliations:
       name: NYU Shanghai
