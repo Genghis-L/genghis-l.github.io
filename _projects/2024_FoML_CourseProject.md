@@ -143,8 +143,8 @@ $$
 \mathcal{R}_{\text{nat}}(f) := \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
 $$
 
-Note that the two errors satisfy 
-$\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ 
+Note that the two errors satisfy
+$\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$
 for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
 
 Introduce the boundary error defined as:
@@ -159,12 +159,12 @@ $$
 \mathcal{R}_{\text{rob}}(f)=\mathcal{R}_{\text{nat}}(f)+\mathcal{R}_{\text{bdy}}(f)
 $$
 
-as the first term 
-$\mathcal{R}_{\text{nat}}(f)$ 
-includes all misclassified points regarding the accuracy, and the second term 
-$\mathcal{R}_{\text{bdy}}(f)$ 
-includes all the points that are classified correctly but within 
-$\mathbb{B}(\mathrm{DB}(f), \epsilon)$, 
+as the first term
+$\mathcal{R}_{\text{nat}}(f)$
+includes all misclassified points regarding the accuracy, and the second term
+$\mathcal{R}_{\text{bdy}}(f)$
+includes all the points that are classified correctly but within
+$\mathbb{B}(\mathrm{DB}(f), \epsilon)$,
 regarding the robustness.
 
 There is in fact a trade-off between $\mathcal{R}_{\text{nat}}(f)$ and $\mathcal{R}_{\text{bdy}}(f)$, showcased by the following toy example: Consider the case $(X, Y) \sim \mathcal{D}$, where the marginal distribution over the sample space $\mathcal{X}$ is a uniform distribution over $[0,1]$, and for $k=0,1,\ldots,\left\lceil \frac{1}{2\epsilon} - 1 \right\rceil$,
@@ -263,7 +263,7 @@ where $f(\boldsymbol{X})$ is the output vector of learning model (with soft-max 
 ### H-Consistency
 
 Adversarial training methods, such as TRADES, rely on surrogate loss functions because they are differentiable and convex, therefore, easier to optimize.
-While surrogate loss functions are bounded, it is essential to ensure that minimizing the surrogate loss also leads to minimizing the true target loss. This connection is where the concept of *$H$-consistency* plays a pivotal role.\\
+While surrogate loss functions are bounded, it is essential to ensure that minimizing the surrogate loss also leads to minimizing the true target loss. This connection is where the concept of _$H$-consistency_ plays a pivotal role.\\
 $H$-consistency is formally defined as:
 
 $$
@@ -274,13 +274,13 @@ where $\mathcal{R}_{\text{target}}$ represents the true target loss, $\mathcal{R
 
 However, TRADES's surrogate loss has been shown to fail the $H$-consistency bound in certain scenarios <d-cite key="awasthi_theoretically_2023"></d-cite>, particularly in multi-class classification tasks. In these cases, models optimized with TRADES can yield inaccurate predictions despite achieving low surrogate loss values, leading to unfavorable hypothesis being selected.
 
-To address this limitation, a family surrogate loss function called *Smooth Adversarial Losses* was introduced in <d-cite key="awasthi_theoretically_2023"></d-cite>. Which satisfies the $H$-consistency and bounded under:
+To address this limitation, a family surrogate loss function called _Smooth Adversarial Losses_ was introduced in <d-cite key="awasthi_theoretically_2023"></d-cite>. Which satisfies the $H$-consistency and bounded under:
 
 $$
 \Phi_{smooth} \leq \Phi(y h(x)) + \nu \left| y h(x) - \inf_{x' : \|x - x'\| \leq \gamma} y h(x') \right|
 $$
 
-Building on this improvement, the *Principled Smooth Adversarial Loss (PSAL)* algorithm was developed. PSAL outperforms TRADES and other state-of-the-art methods in terms of both clean accuracy and robustness to adversarial perturbations. This demonstrates that addressing the $H$-consistency limitation of TRADES can lead to more reliable adversarial training frameworks.
+Building on this improvement, the _Principled Smooth Adversarial Loss (PSAL)_ algorithm was developed. PSAL outperforms TRADES and other state-of-the-art methods in terms of both clean accuracy and robustness to adversarial perturbations. This demonstrates that addressing the $H$-consistency limitation of TRADES can lead to more reliable adversarial training frameworks.
 
 ## Future Work
 
