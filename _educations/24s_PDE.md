@@ -18,7 +18,7 @@ shortcuts:
     link: /assets/pdf/educations/24s_PDE/24s_PDE_textbook.pdf
 
 course_information:
-  Instructor: Zhuocheng Xiao
+  Instructor: [Zhuocheng Xiao](https://shanghai.nyu.edu/academics/faculty/directory/zhuo-cheng-xiao)
   Semester: Spring 2024
   Outline: >
     Physical Derivation of PDEs, Linear 1st-order PDEs, Wave Equations, Diffusion Equations, Reflection Methods, BVP, Fourier Representation, Laplace Equations, Green's Representation, Distribution Transform

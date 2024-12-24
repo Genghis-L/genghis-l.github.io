@@ -19,7 +19,7 @@ display_categories:
     <h2 class="category">{{ category }}</h2>
   </a>
   {% assign categorized_educations = site.educations | where: "category", category %}
-  {% assign sorted_educations = categorized_educations | sort: "importance" %}
+  {% assign sorted_educations = categorized_educations | sort: "importance" | reverse %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
   <div class="container">
@@ -42,7 +42,7 @@ display_categories:
 
 <!-- Display educations without categories -->
 
-{% assign sorted_educations = site.educations | sort: "importance" %}
+{% assign sorted_educations = site.educations | sort: "importance" | reverse %}
 
   <!-- Generate cards for each project -->
 
