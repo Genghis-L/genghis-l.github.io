@@ -50,7 +50,6 @@ shortcuts:
 
 ## Overview
 
-<d-cite key=""></d-cite>
 By looking through recent works in adversarial robustness <d-cite key="goodfellow_explaining_2015"></d-cite>, <d-cite key="ma_towards_2018"></d-cite> <d-cite key="zhang_theoretically_2019"></d-cite>, <d-cite key="awasthi_theoretically_2023"></d-cite>, we start by defining the question of what adversarial robustness is and why it is important. We then consider frameworks for training robust models, and survey theoretical results that provide insights into the fundamental trade-offs between accuracy and robustness. Specifically, Zhang et al. (2019) <d-cite key="zhang_theoretically_2019"></d-cite> introduces TRADES, a theory-based algorithm for balancing this trade-off, and Awasthi et al. (2023) <d-cite key="awasthi_theoretically_2023"></d-cite> introduces a thorough theoretical framework for adversarial robustness theory. Overall, we examine recent advances that improve training by leveraging conditions such as classification-calibrated surrogate losses and the concept of $H$-consistency, thereby guiding the design of robust models that maintain strong theoretical guarantees.
 
 Keywords: Adversarial Robustness, Robust Optimization, TRADES, $H$-Consistency, Classification-Calibrated Surrogate Loss
@@ -143,9 +142,7 @@ $$
 \mathcal{R}_{\text{nat}}(f) := \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
 $$
 
-Note that the two errors satisfy
-$\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$
-for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
+Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
 
 Introduce the boundary error defined as:
 
@@ -159,13 +156,7 @@ $$
 \mathcal{R}_{\text{rob}}(f)=\mathcal{R}_{\text{nat}}(f)+\mathcal{R}_{\text{bdy}}(f)
 $$
 
-as the first term
-$\mathcal{R}_{\text{nat}}(f)$
-includes all misclassified points regarding the accuracy, and the second term
-$\mathcal{R}_{\text{bdy}}(f)$
-includes all the points that are classified correctly but within
-$\mathbb{B}(\mathrm{DB}(f), \epsilon)$,
-regarding the robustness.
+as the first term $\mathcal{R}_{\text{nat}}(f)$ includes all misclassified points regarding the accuracy, and the second term $\mathcal{R}_{\text{bdy}}(f)$ includes all the points that are classified correctly but within $\mathbb{B}(\mathrm{DB}(f), \epsilon)$, regarding the robustness.
 
 There is in fact a trade-off between $\mathcal{R}_{\text{nat}}(f)$ and $\mathcal{R}_{\text{bdy}}(f)$, showcased by the following toy example: Consider the case $(X, Y) \sim \mathcal{D}$, where the marginal distribution over the sample space $\mathcal{X}$ is a uniform distribution over $[0,1]$, and for $k=0,1,\ldots,\left\lceil \frac{1}{2\epsilon} - 1 \right\rceil$,
 
@@ -249,7 +240,7 @@ $$
 \min_f \mathbb{E}\{\underbrace{\phi(f(\boldsymbol{X}) Y)}_{\text {for accuracy }}+\underbrace{\max_{\boldsymbol{\boldsymbol { X } ^ { \prime } \in \mathbb { B } ( \boldsymbol { X } , \epsilon )}} \phi\left(f(\boldsymbol{X}) f\left(\boldsymbol{X}^{\prime}\right) / \lambda\right)}_{\text {regularization for robustness }}\}
 $$
 
-Heuristically, [<d-cite key="zhang_theoretically_2019"></d-cite>] use two heuristics to achieve more general defenses:
+Heuristically, <d-cite key="zhang_theoretically_2019"></d-cite> use two heuristics to achieve more general defenses:
 a) extending to multi-class problems by involving multi-class calibrated loss;
 b) approximately solving the mini-max problem via alternating gradient descent.
 For multi-class problems, a surrogate loss is calibrated if minimizers of the surrogate risk are also minimizers of the $0-1$ risk [\cite{pires_multiclass_2016}]. Examples of multi-class calibrated loss include cross-entropy loss. Algorithmically, [<d-cite key="zhang_theoretically_2019"></d-cite>] extend the problem to the case of multi-class classifications by replacing $\phi$ with a multi-class calibrated loss $\mathcal{L}(\cdot, \cdot)$ :
