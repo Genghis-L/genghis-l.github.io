@@ -9,16 +9,16 @@ pretty_table: true
 shortcuts:
   - name: CSCI-UA. 473 Syllabus
     icon: fa-solid fa-file
-    link: /assets/pdf/educations/24f_FoML/FoML-UA_syllabus.pdf
+    link: /assets/pdf/educations/24f_FoML/FoML-UA/FoML-UA_syllabus.pdf
   - name: CSCI-UA. 473 Notes
     icon: fa-solid fa-file
-    link: /assets/pdf/educations/24f_FoML/FoML-UA_notes.pdf
+    link: /assets/pdf/educations/24f_FoML/FoML-UA/FoML-UA_notes.pdf
   - name: CSCI-GA. 2566 Syllabus
     icon: fa-solid fa-file
-    link: /assets/pdf/educations/24f_FoML/FoML-GA_syllabus.pdf
+    link: /assets/pdf/educations/24f_FoML/FoML-GA/FoML-GA_syllabus.pdf
   - name: CSCI-GA. 2566 Slides
     icon: fa-solid fa-file
-    link: /assets/pdf/educations/24f_FoML/FoML-GA_slides.pdf
+    link: /assets/pdf/educations/24f_FoML/FoML-GA/FoML-GA_slides.pdf
 
 course_information:
   Instructor: <a href="https://cims.nyu.edu/~bruna/">Joan Bruna</a> & <a href="https://cs.nyu.edu/~mohri/">Mehryar Mohri</a>
