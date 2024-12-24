@@ -207,12 +207,12 @@ $$
 where $\widetilde{\psi}(\theta) := H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$.
 In fact, the function $\psi(\theta)$ is the largest convex lower bound on $\tilde{\psi}$. The value $H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$ characterizes how close the surrogate loss $\phi$ is to the class of non-classification-calibrated losses.
 
-**Lemma 2.1 <d-cite key="bartlett_convexity_2006"></d-cite>:**
+**Lemma 2.1** <d-cite key="bartlett_convexity_2006"></d-cite>:
 Under Assumption 1, the function $\psi$ has the following properties: $\psi$ is non-decreasing, continuous, convex on $[0,1]$ and $\psi(0)=0$.
 
 By using good properties of this $\psi$ transform, we can derive a tight upper bound in the sense of the following two theorems:
 
-**Theorem 3.1 <d-cite key="zhang_theoretically_2019"></d-cite>:**
+**Theorem 3.1** <d-cite key="zhang_theoretically_2019"></d-cite>:
 Let $\mathcal{R}_\phi(f) := \mathbb{E}_\phi[f(\mathbf{X}) Y]$ and $R_\phi^* := \min_f \mathcal{R}_\phi(f)$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
 
 $$
@@ -223,7 +223,7 @@ $$
 \end{gathered}
 $$
 
-**Theorem 3.2 <d-cite key="zhang_theoretically_2019"></d-cite>:**
+**Theorem 3.2** <d-cite key="zhang_theoretically_2019"></d-cite>:
 Suppose that $|\mathcal{X}| \geq 2$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(x) \rightarrow 0$ as $x \rightarrow+\infty$, any $\xi>0$, and any $\theta \in[0,1]$, there exists a probability distribution on $\mathcal{X} \times\{ \pm 1\}$, a function $f: \mathbb{R}^d \rightarrow \mathbb{R}$, and a regularization parameter $\lambda>0$ such that $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*=\theta$ and
 
 $$
@@ -233,7 +233,7 @@ $$
 \end{gathered}
 $$
 
-**TRADES Algorithm <d-cite key="zhang_theoretically_2019"></d-cite>:**
+**TRADES Algorithm** <d-cite key="zhang_theoretically_2019"></d-cite>:
 Optimization on Upper Bound Theorems 3.1 and 3.2 shed light on algorithmic designs of adversarial defenses. In order to minimize $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*$, the theorems suggest minimizing ${ }^a$
 
 $$
