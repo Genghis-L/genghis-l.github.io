@@ -22,7 +22,7 @@ course_information:
   Semester: Spring 2024
   Outline: >
     Probability space, Sigma algebra, measure, conditional probability and independence; Measurable functions, Random variables and their distributions; Integration, Expectation, conditional distributions and expectation, functions of random variables, Radon-Nikodym derivatives; Random walks; Generating functions and characteristic functions; Branching process; Convergence of random variables, Laws of large numbers, Monte-Carlo methods; Central limit theorem, Large deviations; Markov Chains
-  Textbook: <a href="https://amazon.com/Probability-Random-Processes-Geoffrey-Grimmett/dp/0198847599">Probability and Random Processes [4th Edition] (G. Grimmett and D. Stirzaker)</a>, more reference books in the syllabus
+  Textbook: <a href="https://www.amazon.com/Probability-Random-Processes-Geoffrey-Grimmett/dp/0198847599">Probability and Random Processes [4th Edition] (G. Grimmett and D. Stirzaker)</a>, more reference books in the syllabus
 
 grade:
   letter: "A"
