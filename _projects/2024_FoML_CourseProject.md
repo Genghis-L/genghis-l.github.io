@@ -50,7 +50,7 @@ shortcuts:
 
 ## Overview
 
-By looking through recent works in adversarial robustness <d-cite key="goodfellow_explaining_2015"></d-cite>, <d-cite key="ma_towards_2018"></d-cite> <d-cite key="zhang_theoretically_2019"></d-cite>, <d-cite key="awasthi_theoretically_2023"></d-cite>, we start by defining the question of what adversarial robustness is and why it is important. We then consider frameworks for training robust models, and survey theoretical results that provide insights into the fundamental trade-offs between accuracy and robustness. Specifically, Zhang et al. (2019) <d-cite key="zhang_theoretically_2019"></d-cite> introduces TRADES, a theory-based algorithm for balancing this trade-off, and Awasthi et al. (2023) <d-cite key="awasthi_theoretically_2023"></d-cite> introduces a thorough theoretical framework for adversarial robustness theory. Overall, we examine recent advances that improve training by leveraging conditions such as classification-calibrated surrogate losses and the concept of $H$-consistency, thereby guiding the design of robust models that maintain strong theoretical guarantees.
+By looking through recent works in adversarial robustness <d-cite key="goodfellow_explaining_2015"></d-cite>, <d-cite key="ma_towards_2018"></d-cite> <d-cite key="zhang_theoretically_2019"></d-cite>, <d-cite key="awasthi_theoretically_2023"></d-cite>, we start by defining the question of what adversarial robustness is and why it is important. We then consider frameworks for training robust models, and survey theoretical results that provide insights into the fundamental trade-offs between accuracy and robustness. Specifically, Zhang et al. (2019) <d-cite key="zhang_theoretically_2019"></d-cite> introduces **TRADES**, a theory-based algorithm for balancing this trade-off, and Awasthi et al. (2023) <d-cite key="awasthi_theoretically_2023"></d-cite> introduces a thorough theoretical framework for adversarial robustness theory. Overall, we examine recent advances that improve training by leveraging conditions such as classification-calibrated surrogate losses and the concept of $H$-consistency, thereby guiding the design of robust models that maintain strong theoretical guarantees.
 
 Keywords: Adversarial Robustness, Robust Optimization, TRADES, $H$-Consistency, Classification-Calibrated Surrogate Loss
 
@@ -58,7 +58,7 @@ Keywords: Adversarial Robustness, Robust Optimization, TRADES, $H$-Consistency, 
 
 Deep neural networks have achieved remarkable success in recent years, yet their vulnerability to adversarial perturbations remains a significant concern. Goodfellow et al. (2015) <d-cite key="goodfellow_explaining_2015"></d-cite> demonstrated that even small, imperceptible changes to input data can deceive state-of-the-art models with high confidence. This phenomenon challenges the reliability of neural networks in safety-critical applications. Further research by Ma (2018) <d-cite key="ma_towards_2018"></d-cite> showed that existing defenses, despite their apparent success, often fail against stronger, adaptive adversaries. These findings suggest that current methods lack the theoretical guarantees necessary for practical robustness.
 
-A key issue in addressing adversarial robustness is the fundamental trade-off between robustness and accuracy. This trade-off was formalized by Zhang et al. (2019) <d-cite key="zhang_theoretically_2019"></d-cite>, who introduced TRADES, a theoretically principled framework for balancing robustness and accuracy. In parallel, work by Awasthi et al. (2023) <d-cite key="awasthi_theoretically_2023"></d-cite> and others provided rigorous theoretical foundations, illustrating that certain adversarial robustness guarantees can only be achieved at the expense of reduced natural accuracy.
+A key issue in addressing adversarial robustness is the fundamental trade-off between robustness and accuracy. This trade-off was formalized by Zhang et al. (2019) <d-cite key="zhang_theoretically_2019"></d-cite>, who introduced **TRADES**, a theoretically principled framework for balancing robustness and accuracy. In parallel, work by Awasthi et al. (2023) <d-cite key="awasthi_theoretically_2023"></d-cite> and others provided rigorous theoretical foundations, illustrating that certain adversarial robustness guarantees can only be achieved at the expense of reduced natural accuracy.
 
 At the same time, the concept of $H$-consistency has emerged as a critical property for surrogate loss functions, ensuring alignment between the surrogate loss and the true classification loss under adversarial settings. This concept guides the choice of training objectives, ensuring that improvements in surrogate loss directly translate into improved adversarial robustness.
 
@@ -97,7 +97,7 @@ $$
 
 This result guarantees that $ -\nabla\_{\theta} L(\theta, x + \bar{\delta}, y) $ is a descent direction for the max-function $ \phi(\theta) $, and also the saddle point problem defined earlier in this section.
 
-In practice, the inner maximization is typically approximated using iterative methods such as Projected Gradient Descent (PGD), which ensures that $\delta^*$ remains within the allowable set $\mathcal{S}$.
+In practice, the inner maximization is typically approximated using iterative methods such as **Projected Gradient Descent (PGD)**, which ensures that $\delta^*$ remains within the allowable set $\mathcal{S}$.
 
 We then utilize all the results above to give a principled approach to compute gradients for robust optimization efficiently.
 
@@ -130,7 +130,7 @@ This phenomenon further increases the dependency on model capacity. To learn the
 
 ### Establishment of Theoretical Framework and Improvement on the Adversarial Training
 
-The key motivation of <d-cite key="zhang_theoretically_2019"></d-cite>'s work is to address the overfitting issue and the lack of theoretical framework in adversarial training. All the detailed work has been done and proved in binary classification problem. Define $\mathcal{R}_{\mathrm{rob}}$ to characterize the robustness of a score function $f: \mathcal{X} \rightarrow \mathbb{R}$ by:
+The key motivation of Zhang et al. (2019) <d-cite key="zhang_theoretically_2019"></d-cite>'s work is to address the overfitting issue and the lack of theoretical framework in adversarial training. All the detailed work has been done and proved in binary classification problem. Define $\mathcal{R}_{\mathrm{rob}}$ to characterize the robustness of a score function $f: \mathcal{X} \rightarrow \mathbb{R}$ by:
 
 $$
 \mathcal{R}_{\text{rob}}(f) := \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\left\{\exists \boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon) \text { s.t. } f\left(\boldsymbol{X}^{\prime}\right) Y \leq 0\right\}}
@@ -142,7 +142,7 @@ $$
 \mathcal{R}_{\text{nat}}(f) := \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
 $$
 
-Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
+Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ for all f. The robust error is equal to the natural error when $\epsilon=0$.
 
 Introduce the boundary error defined as:
 
@@ -207,12 +207,12 @@ $$
 where $\widetilde{\psi}(\theta) := H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$.
 In fact, the function $\psi(\theta)$ is the largest convex lower bound on $\tilde{\psi}$. The value $H^{-}\left(\frac{1+\theta}{2}\right)-H\left(\frac{1+\theta}{2}\right)$ characterizes how close the surrogate loss $\phi$ is to the class of non-classification-calibrated losses.
 
-**Lemma 2.1 [\cite{bartlett_convexity_2006}]:**
+**Lemma 2.1 <d-cite key="bartlett_convexity_2006"></d-cite>:**
 Under Assumption 1, the function $\psi$ has the following properties: $\psi$ is non-decreasing, continuous, convex on $[0,1]$ and $\psi(0)=0$.
 
 By using good properties of this $\psi$ transform, we can derive a tight upper bound in the sense of the following two theorems:
 
-**Theorem 3.1 [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
+**Theorem 3.1 <d-cite key="zhang_theoretically_2019"></d-cite>:**
 Let $\mathcal{R}_\phi(f) := \mathbb{E}_\phi[f(\mathbf{X}) Y]$ and $R_\phi^* := \min_f \mathcal{R}_\phi(f)$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
 
 $$
@@ -223,7 +223,7 @@ $$
 \end{gathered}
 $$
 
-**Theorem 3.2 [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
+**Theorem 3.2 <d-cite key="zhang_theoretically_2019"></d-cite>:**
 Suppose that $|\mathcal{X}| \geq 2$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(x) \rightarrow 0$ as $x \rightarrow+\infty$, any $\xi>0$, and any $\theta \in[0,1]$, there exists a probability distribution on $\mathcal{X} \times\{ \pm 1\}$, a function $f: \mathbb{R}^d \rightarrow \mathbb{R}$, and a regularization parameter $\lambda>0$ such that $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*=\theta$ and
 
 $$
@@ -233,17 +233,17 @@ $$
 \end{gathered}
 $$
 
-**TRADES Algorithm [<d-cite key="zhang_theoretically_2019"></d-cite>]:**
+**TRADES Algorithm <d-cite key="zhang_theoretically_2019"></d-cite>:**
 Optimization on Upper Bound Theorems 3.1 and 3.2 shed light on algorithmic designs of adversarial defenses. In order to minimize $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*$, the theorems suggest minimizing ${ }^a$
 
 $$
 \min_f \mathbb{E}\{\underbrace{\phi(f(\boldsymbol{X}) Y)}_{\text {for accuracy }}+\underbrace{\max_{\boldsymbol{\boldsymbol { X } ^ { \prime } \in \mathbb { B } ( \boldsymbol { X } , \epsilon )}} \phi\left(f(\boldsymbol{X}) f\left(\boldsymbol{X}^{\prime}\right) / \lambda\right)}_{\text {regularization for robustness }}\}
 $$
 
-Heuristically, <d-cite key="zhang_theoretically_2019"></d-cite> use two heuristics to achieve more general defenses:
+Heuristically, Zhang et al. (2019) <d-cite key="zhang_theoretically_2019"></d-cite> use two heuristics to achieve more general defenses:
 a) extending to multi-class problems by involving multi-class calibrated loss;
 b) approximately solving the mini-max problem via alternating gradient descent.
-For multi-class problems, a surrogate loss is calibrated if minimizers of the surrogate risk are also minimizers of the $0-1$ risk [\cite{pires_multiclass_2016}]. Examples of multi-class calibrated loss include cross-entropy loss. Algorithmically, [<d-cite key="zhang_theoretically_2019"></d-cite>] extend the problem to the case of multi-class classifications by replacing $\phi$ with a multi-class calibrated loss $\mathcal{L}(\cdot, \cdot)$ :
+For multi-class problems, a surrogate loss is calibrated if minimizers of the surrogate risk are also minimizers of the $0-1$ risk <d-cite key="pires_multiclass_2016"></d-cite>. Examples of multi-class calibrated loss include cross-entropy loss. Algorithmically, Zhang et al. (2019) <d-cite key="zhang_theoretically_2019"></d-cite> extend the problem to the case of multi-class classifications by replacing $\phi$ with a multi-class calibrated loss $\mathcal{L}(\cdot, \cdot)$ :
 
 $$
 \min_f \mathbb{E}\left\{\mathcal{L}(f(\boldsymbol{X}), \boldsymbol{Y})+\max_{\boldsymbol{X}^{\prime} \in \mathbb{B}(\boldsymbol{X}, \epsilon)} \mathcal{L}\left(f(\boldsymbol{X}), f\left(\boldsymbol{X}^{\prime}\right)\right) / \lambda\right\}
@@ -253,7 +253,7 @@ where $f(\boldsymbol{X})$ is the output vector of learning model (with soft-max 
 
 ### H-Consistency
 
-Adversarial training methods, such as TRADES, rely on surrogate loss functions because they are differentiable and convex, therefore, easier to optimize.
+Adversarial training methods, such as **TRADES**, rely on surrogate loss functions because they are differentiable and convex, therefore, easier to optimize.
 While surrogate loss functions are bounded, it is essential to ensure that minimizing the surrogate loss also leads to minimizing the true target loss. This connection is where the concept of _$H$-consistency_ plays a pivotal role.\\
 $H$-consistency is formally defined as:
 
@@ -263,17 +263,17 @@ $$
 
 where $\mathcal{R}_{\text{target}}$ represents the true target loss, $\mathcal{R}_{\phi}$ is the surrogate loss, and $H$ is the hypothesis space. Intuitively, this inequality ensures that the gap between the true target loss and the surrogate loss is bounded by a function of their respective differences. In simpler terms, as the surrogate loss decreases, the true target loss cannot increase within a given set of models $H$. This property is critical for ensuring that adversarial training methods remain effective in practice.
 
-However, TRADES's surrogate loss has been shown to fail the $H$-consistency bound in certain scenarios <d-cite key="awasthi_theoretically_2023"></d-cite>, particularly in multi-class classification tasks. In these cases, models optimized with TRADES can yield inaccurate predictions despite achieving low surrogate loss values, leading to unfavorable hypothesis being selected.
+However, **TRADES**'s surrogate loss has been shown to fail the $H$-consistency bound in certain scenarios <d-cite key="awasthi_theoretically_2023"></d-cite>, particularly in multi-class classification tasks. In these cases, models optimized with **TRADES** can yield inaccurate predictions despite achieving low surrogate loss values, leading to unfavorable hypothesis being selected.
 
-To address this limitation, a family surrogate loss function called _Smooth Adversarial Losses_ was introduced in <d-cite key="awasthi_theoretically_2023"></d-cite>. Which satisfies the $H$-consistency and bounded under:
+To address this limitation, a family surrogate loss function called _Smooth Adversarial Losses_ was introduced in Awasthi et al. (2023) <d-cite key="awasthi_theoretically_2023"></d-cite>. Which satisfies the $H$-consistency and bounded under:
 
 $$
 \Phi_{smooth} \leq \Phi(y h(x)) + \nu \left| y h(x) - \inf_{x' : \|x - x'\| \leq \gamma} y h(x') \right|
 $$
 
-Building on this improvement, the _Principled Smooth Adversarial Loss (PSAL)_ algorithm was developed. PSAL outperforms TRADES and other state-of-the-art methods in terms of both clean accuracy and robustness to adversarial perturbations. This demonstrates that addressing the $H$-consistency limitation of TRADES can lead to more reliable adversarial training frameworks.
+Building on this improvement, the _Principled Smooth Adversarial Loss (PSAL)_ algorithm was developed. PSAL outperforms **TRADES** and other state-of-the-art methods in terms of both clean accuracy and robustness to adversarial perturbations. This demonstrates that addressing the $H$-consistency limitation of **TRADES** can lead to more reliable adversarial training frameworks.
 
 ## Future Work
 
-In TRADES, a hyperparameter $\lambda$ was introduced to balance the trade-off between accuracy and robustness. However, $\lambda$ does not influence the theoretical proofs of the bounds and is only constrained by the loose condition $\lambda > 0$.
+In **TRADES**, a hyperparameter $\lambda$ was introduced to balance the trade-off between accuracy and robustness. However, $\lambda$ does not influence the theoretical proofs of the bounds and is only constrained by the loose condition $\lambda > 0$.
 Which is a reasonable and intuitive hyperparameter for empirical tuning. However this might also suggests that there is significant room for further research and development to improve the algorithm.
