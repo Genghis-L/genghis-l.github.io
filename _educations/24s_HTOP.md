@@ -30,7 +30,7 @@ grade:
   total: "4.00"
 ---
 
-This is an undergraduate-level course at the [NYU Shanghai](https://shanghai.nyu.edu/).
+This is an undergraduate-level course at [NYU Shanghai](https://shanghai.nyu.edu/).
 
 {% include educations/course_information.md %}
 {% include educations/gradebook.md %}

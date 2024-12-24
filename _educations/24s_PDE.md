@@ -19,7 +19,7 @@ course_information:
   Semester: Spring 2024
   Outline: >
     Physical Derivation of PDEs, Linear 1st-order PDEs, Wave Equations, Diffusion Equations, Reflection Methods, BVP, Fourier Representation, Laplace Equations, Green's Representation, Distribution Transform
-  Textbook: <a href="https://www.amazon.com/Partial-Differential-Equations-Walter-Strauss/dp/0470054565">Partial Differential: Equations An Introduction [2nd Edition] (Walter A. Strauss)</a>
+  Textbook: <a href="https://www.amazon.com/Partial-Differential-Equations-Walter-Strauss/dp/0470054565">Partial Differential - Equations An Introduction [2nd Edition] (Walter A. Strauss)</a>
 
 grade:
   letter: "A"
@@ -27,7 +27,7 @@ grade:
   total: "4.00"
 ---
 
-This is an undergraduate-level course at the [NYU Shanghai](https://shanghai.nyu.edu/).
+This is an undergraduate-level course at [NYU Shanghai](https://shanghai.nyu.edu/).
 
 {% include educations/course_information.md %}
 {% include educations/gradebook.md %}
