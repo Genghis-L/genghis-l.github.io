@@ -18,8 +18,9 @@ course_information:
   Instructor: <a href="https://shanghai.nyu.edu/academics/faculty/directory/zhuo-cheng-xiao">Zhuocheng Xiao</a> & <a href="https://en.wikipedia.org/wiki/Fanghua_Lin">Fanghua Lin</a>
   Semester: Spring 2024 & Fall 2024
   Outline: >
-    MATH-SHU. 263: Physical Derivation of PDEs, Linear 1st-order PDEs, Wave Equations, Diffusion Equations, Reflection Methods, BVP, Fourier Representation, Laplace Equations, Green's Representation, Distribution Transform
-    MATH-GA. 2490: First-order equations, Cauchy-Kowalewsky theorem, Constant-coefficient-second-order equations(Laplace's, Heat, and Wave equations), Explicit representation formulas and qualitative methods(e.g. the maximum principle), Nonlinear equations(e.g., Burger's and minimal surface equations), Sobolev Spaces
+    - MATH-SHU. 263: Physical Derivation of PDEs, Linear 1st-order PDEs, Wave Equations, Diffusion Equations, Reflection Methods, BVP, Fourier Representation, Laplace Equations, Green's Representation, Distribution Transform
+
+    - MATH-GA. 2490: First-order equations, Cauchy-Kowalewsky theorem, Constant-coefficient-second-order equations(Laplace's, Heat, and Wave equations), Explicit representation formulas and qualitative methods(e.g. the maximum principle), Nonlinear equations(e.g., Burger's and minimal surface equations), Sobolev Spaces
   Textbook: Partial Differential Equations - An Introduction [2nd Edition] (Walter A. Strauss), Partial Differential Equations [2nd Edition] (Lawrence C. Evans)
 
 grade:
