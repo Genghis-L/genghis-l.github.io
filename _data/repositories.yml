@@ -1,8 +1,9 @@
 github_users:
   - Genghis-L
 
-repo_description_lines_max: 2
+repo_description_lines_max: 3
 
 github_repos:
-  - Genghis-L/Spring-2024-ICDS
-  - Genghis-L/2023_Fall_ICP
+  - Genghis-L/2024-Spring_ICDS
+  - Genghis-L/2023-Fall_ICP
+  - Genghis-L/2024-Summer_Data-Structures
