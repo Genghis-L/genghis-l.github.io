@@ -7,7 +7,7 @@ category: [Honors Mathematics (NYU)]
 pretty_table: true
 
 shortcuts:
-  - name: Syllabus
+  - name: Syllabus for MATH-SHU. 263
     icon: fa-solid fa-file
     link: /assets/pdf/educations/24s_PDE/24s_PDE_syllabus.pdf
   - name: Notes for MATH-SHU. 263
@@ -27,8 +27,8 @@ course_information:
 
 grade:
   letter: "A"
-  actual: "4.00"
-  total: "4.00"
+  actual: "8.00"
+  total: "8.00"
 ---
 
 This is a series of undergraduate-graduate-level courses at [NYU Shanghai](https://shanghai.nyu.edu/) and the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU.
