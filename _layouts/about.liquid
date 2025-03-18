@@ -79,6 +79,13 @@ layout: default
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
+    
+    <!-- Visitor Map -->
+    <br>
+    <h2>Visitor Map</h2>
+    <div class="visitor-map">
+      <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=pcYl_UrPz9_2MJk797BU7V-7y9v8IX--FJ6vE2I9EeY&cl=ffffff&w=a"></script>
+    </div>
 
     {% if site.newsletter.enabled and site.footer_fixed %}
       {% include scripts/newsletter.liquid center=true %}
