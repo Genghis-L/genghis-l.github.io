@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const t=["profile/prof_pic_1.jpg","profile/prof_pic_2.jpg"],e=t[Math.floor(Math.random()*t.length)],o=document.querySelector(".profile img");if(o){const t=o.getAttribute("src"),r=t.substring(0,t.lastIndexOf("/")+1)+e;o.setAttribute("src",r)}});
