@@ -18,8 +18,40 @@ course_information:
   Instructor: <a href="https://cs.nyu.edu/~mohri/">Mehryar Mohri</a>
   Semester: Spring 2025
   Outline: >
+    - This course discusses advanced topics in theoretical machine learning, extending beyond the scope of foundational graduate courses. The primary goal is to introduce key concepts not covered in basic ML courses such as Foundations of Machine Learning, while also exploring cutting-edge learning problems that can serve as a springboard for research or the development of novel application-relevant techniques.
 
-    - CSCI-GA. 3033: 
+    - A central focus of the course is a rigorous analysis of the rich field of online learning. In addition, the material encompasses a broad range of advanced topics in supervised learning, providing a comprehensive overview of the theoretical underpinnings of modern machine learning methods.
+
+    - Through a combination of lectures, discussions, and assignments, students will gain a deep understanding of the fundamental principles governing learning algorithms. The course will equip students with the necessary theoretical foundations to conduct cutting-edge research in theoretical machine learning, as well as to develop novel and effective machine learning solutions for real-world problems.
+
+    - On-line learning scenario:
+      - On-line learning basics
+      - Learning and games
+      - Learning with large expert spaces
+      - Online convex optimization
+      - Bandit problems
+      - Sequential portfolio selection
+
+    - Advanced standard scenario:
+      - Learning kernels
+      - Ensemble methods
+      - Structured prediction
+
+    - Large-scale learning:
+      - Dimensionality reduction
+      - Low-rank approximation
+      - Large-scale optimization
+      - Distributed learning
+      - Clustering
+      - Spectral learning
+      - Massive multi-class classification
+
+    - Other non-standard learning scenarios:
+      - Domain adaptation and sample bias correction
+      - Transduction and semi-supervised learning
+      - Active learning
+      - Time series prediction
+      - Privacy-aware learning
 
   Textbook: <a href="https://cs.nyu.edu/~mohri/mlbook/">Foundations of Machine Learning [2nd Edition] (Mehryar Mohri, et al.)</a>
 
