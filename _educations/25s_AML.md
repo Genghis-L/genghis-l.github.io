@@ -7,12 +7,9 @@ category: [Data Science (NYU)]
 pretty_table: true
 
 shortcuts:
-  - name: CSCI-GA. 3033 Syllabus
+  - name: CSCI-GA. 3033 Website
     icon: fa-solid fa-file
-    link: /assets/pdf/educations/25s_AML/AML_syllabus.pdf
-  - name: CSCI-GA. 3033 Slides
-    icon: fa-solid fa-file
-    link: /assets/pdf/educations/25s_AML/AML_slides.pdf
+    link: https://cs.nyu.edu/~mohri/aml25/
   - name: Project
     icon: fa-solid fa-link
     link: /projects/2025_AML_CourseProject

@@ -30,7 +30,7 @@ display_categories: [Travel, People]
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">
     {% for photo in sorted_photos %}
-      {% include projects.liquid project=photo %}
+      {% include projects.liquid %}
     {% endfor %}
   </div>
   {% endif %}
@@ -56,9 +56,9 @@ display_categories: [Travel, People]
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">
     {% for photo in sorted_photos %}
-      {% include projects.liquid project=photo %}
+      {% include projects.liquid %}
     {% endfor %}
   </div>
   {% endif %}
 {% endif %}
-</div> 
+</div>

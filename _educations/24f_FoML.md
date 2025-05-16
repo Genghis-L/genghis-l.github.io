@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Fundamentals & Foundations of Machine Learning
-description: CSCI-UA. 473 / CSCI-GA. 2566
+description: CSCI-UA. 473 & CSCI-GA. 2566
 importance: 4 # 1~5
 category: [Data Science (NYU)]
 pretty_table: true
@@ -27,7 +27,7 @@ course_information:
 
     - CSCI-UA. 473: ML Paradigms, Least Square Problems, Supervised Learning, Universal Approximation Theorems, Curse of Dimensionality, Optimizations(GD,SGD), Geometric Deep Learning
 
-    - CSCI-GA. 2566: Probability tools, concentration inequalities; PAC model; Rademacher complexity, growth function, VC-dimension; Perceptron, Winnow; Support vector machines (SVMs); Kernel methods; Boosting; On-line learning; Decision trees; Density estimation, maximum entropy models; Logistic regression, conditional maximum entropy models; Regression problems and algorithms; Ranking problems and algorithms; Learning languages and automata; Reinforcement learning, Markov decision processes(MDPs). See slides and detailed syllabus at the <a href="https://cs.nyu.edu/~mohri/ml24/">course website</a>. 
+    - CSCI-GA. 2566: Probability tools, concentration inequalities; PAC model; Rademacher complexity, growth function, VC-dimension; Perceptron, Winnow; Support vector machines (SVMs); Kernel methods; Boosting; On-line learning; Decision trees; Density estimation, maximum entropy models; Logistic regression, conditional maximum entropy models; Regression problems and algorithms; Ranking problems and algorithms; Learning languages and automata; Reinforcement learning, Markov decision processes(MDPs). See slides and detailed syllabus at the <a href="https://cs.nyu.edu/~mohri/ml24/">course website</a>.
 
   Textbook: <a href="https://link.springer.com/book/10.1007/978-0-387-84858-7">The Elements of Statistical Learning - Data Mining, Inference, and Prediction [2nd Edition] (Trevor Hastie, et al.)</a>, <a href="https://cs.nyu.edu/~mohri/mlbook/">Foundations of Machine Learning [2nd Edition] (Mehryar Mohri, et al.)</a>
 
