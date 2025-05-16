@@ -1,9 +1,8 @@
 github_users:
   - Genghis-L
 
-repo_description_lines_max: 3
+repo_description_lines_max: 2
 
 github_repos:
-  - Genghis-L/2024-Spring_ICDS
-  - Genghis-L/2023-Fall_ICP
-  - Genghis-L/2024-Summer_Data-Structures
+  - Genghis-L/Hamiltonian-Monte-Carlo
+  - Genghis-L/Large-scale-sampler-evaluation
