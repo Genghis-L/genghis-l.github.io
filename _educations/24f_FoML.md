@@ -13,12 +13,12 @@ shortcuts:
   - name: CSCI-UA. 473 Notes
     icon: fa-solid fa-file
     link: /assets/pdf/educations/24f_FoML/FoML-UA/FoML-UA_notes.pdf
-  - name: CSCI-GA. 2566 Syllabus
+  - name: CSCI-GA. 2566 Website
+    icon: fa-solid fa-link
+    link: https://cs.nyu.edu/~mohri/ml24/
+  - name: CSCI-GA. 2566 Project
     icon: fa-solid fa-file
-    link: /assets/pdf/educations/24f_FoML/FoML-GA/FoML-GA_syllabus.pdf
-  - name: CSCI-GA. 2566 Slides
-    icon: fa-solid fa-file
-    link: /assets/pdf/educations/24f_FoML/FoML-GA/FoML-GA_slides.pdf
+    link: /projects/2024_FoML_CourseProject
 
 course_information:
   Instructor: <a href="https://cims.nyu.edu/~bruna/">Joan Bruna</a> & <a href="https://cs.nyu.edu/~mohri/">Mehryar Mohri</a>
@@ -27,7 +27,7 @@ course_information:
 
     - CSCI-UA. 473: ML Paradigms, Least Square Problems, Supervised Learning, Universal Approximation Theorems, Curse of Dimensionality, Optimizations(GD,SGD), Geometric Deep Learning
 
-    - CSCI-GA. 2566: Probability tools, concentration inequalities; PAC model; Rademacher complexity, growth function, VC-dimension; Perceptron, Winnow; Support vector machines (SVMs); Kernel methods; Boosting; On-line learning; Decision trees; Density estimation, maximum entropy models; Logistic regression, conditional maximum entropy models; Regression problems and algorithms; Ranking problems and algorithms; Learning languages and automata; Reinforcement learning, Markov decision processes(MDPs)
+    - CSCI-GA. 2566: Probability tools, concentration inequalities; PAC model; Rademacher complexity, growth function, VC-dimension; Perceptron, Winnow; Support vector machines (SVMs); Kernel methods; Boosting; On-line learning; Decision trees; Density estimation, maximum entropy models; Logistic regression, conditional maximum entropy models; Regression problems and algorithms; Ranking problems and algorithms; Learning languages and automata; Reinforcement learning, Markov decision processes(MDPs). See slides and detailed syllabus at the <a href="https://cs.nyu.edu/~mohri/ml24/">course website</a>. 
 
   Textbook: <a href="https://link.springer.com/book/10.1007/978-0-387-84858-7">The Elements of Statistical Learning - Data Mining, Inference, and Prediction [2nd Edition] (Trevor Hastie, et al.)</a>, <a href="https://cs.nyu.edu/~mohri/mlbook/">Foundations of Machine Learning [2nd Edition] (Mehryar Mohri, et al.)</a>
 
