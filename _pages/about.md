@@ -13,8 +13,10 @@ profile:
     <p>Shanghai, New York</p>
 
 news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
 ---
 
-My name is Kehan (Genghis) Luo (骆可瀚), and I am currently a junior undergraduate at NYU Shanghai, pursuing a double major in Honors Mathematics and Data Science. I am deeply passionate about the future of machine learning and have conducted research in areas such as diffusion models, adversarial training, and transformers, exploring both theoretical and practical approaches. Additionally, I am highly interested in applying machine learning techniques to the financial industry.
+{% include social_inline.liquid %}
+
+My name is Kehan(Genghis) Luo (骆可瀚), and I am currently a senior undergraduate at <a href="https://shanghai.nyu.edu/">NYU Shanghai</a>, pursuing a double major in Honors Mathematics and Data Science(AI track). I am deeply passionate about the future of machine learning and have conducted research in areas such as diffusion models, high-dimensional sampling, and learning theory, exploring both theoretical and practical approaches. Additionally, I am highly interested in applying machine learning techniques to various fields including medical treatment, finance, etc.

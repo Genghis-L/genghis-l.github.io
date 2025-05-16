@@ -1,0 +1,51 @@
+<div class="social-inline">
+  <div class="contact-icons-inline">
+    {% for social in site.data.socials %}
+      {% case social[0] %}
+        {% when 'email' %}
+          <a href="mailto:{{ social[1] | encode_email }}" title="email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        {% when 'github_username' %}
+          <a href="https://github.com/{{ social[1] }}" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        {% when 'linkedin_username' %}
+          <a href="https://www.linkedin.com/in/{{ social[1] }}" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        {% when 'kaggle_id' %}
+          <a href="https://www.kaggle.com/{{ social[1] }}" title="Kaggle">
+            <i class="fa-brands fa-kaggle"></i>
+          </a>
+        {% when 'youtube_id' %}
+          <a href="https://youtube.com/@{{ social[1] }}" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        {% when 'scholar_userid' %}
+          <a href="https://scholar.google.com/citations?user={{ social[1] }}" title="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .social-inline {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .contact-icons-inline {
+    display: inline-flex;
+    gap: 12px;
+  }
+  .contact-icons-inline a {
+    font-size: 1.25rem;
+    color: var(--global-text-color);
+  }
+  .contact-icons-inline a:hover {
+    color: var(--global-theme-color);
+  }
+</style>
