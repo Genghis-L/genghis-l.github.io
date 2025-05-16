@@ -56,7 +56,7 @@ course_information:
     - Generative Modeling using Neural Networks
       - Score-based Diffusion and Probability Flows
 
-  Textbook: See the <a href="https://joanbruna.notion.site/ir25">course website</a>. 
+  Textbook: See the <a href="https://joanbruna.notion.site/ir25">course website</a>.
 
 grade:
   letter: "A"
@@ -64,7 +64,7 @@ grade:
   total: "3.00"
 ---
 
-This is a graduate-level course at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU. By the way, Joan is fantastic. 
+This is a graduate-level course at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU. By the way, Joan is fantastic.
 
 {% include educations/course_information.md %}
 {% include educations/gradebook.md %}

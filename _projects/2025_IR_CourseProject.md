@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Hamiltonian Monte Carlo
-description: 
+description:
 img: assets/img/projects/
 importance: 2 # 1～5
 category: Data Science
@@ -14,14 +14,13 @@ authors:
     affiliations:
       name: NYU Shanghai
 
-
 shortcuts:
   - name: Paper
     icon: fa-solid fa-file
     link: /assets/pdf/projects/
   - name: Code
     icon: fa-brands fa-github
-    link: 
+    link:
 ---
 
 <d-contents>
@@ -32,4 +31,3 @@ shortcuts:
 </d-contents>
 
 ## Overview
-

@@ -6,7 +6,7 @@ subtitle: <a href="https://shanghai.nyu.edu/">NYU Shanghai</a>. Senior Undergrad
 
 profile:
   align: right
-  image: profile/pic1.jpg
+  image: profile/prof_pic_1.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Email: kl4747@nyu.edu</p>
