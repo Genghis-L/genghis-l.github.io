@@ -13,16 +13,19 @@ shortcuts:
   - name: CSCI-GA. 3033 Slides
     icon: fa-solid fa-file
     link: /assets/pdf/educations/25s_AML/AML_slides.pdf
+  - name: Project
+    icon: fa-solid fa-link
+    link: /projects/2025_AML_CourseProject
 
 course_information:
   Instructor: <a href="https://cs.nyu.edu/~mohri/">Mehryar Mohri</a>
   Semester: Spring 2025
   Outline: >
-    - This course discusses advanced topics in theoretical machine learning, extending beyond the scope of foundational graduate courses. The primary goal is to introduce key concepts not covered in basic ML courses such as Foundations of Machine Learning, while also exploring cutting-edge learning problems that can serve as a springboard for research or the development of novel application-relevant techniques.
-
-    - A central focus of the course is a rigorous analysis of the rich field of online learning. In addition, the material encompasses a broad range of advanced topics in supervised learning, providing a comprehensive overview of the theoretical underpinnings of modern machine learning methods.
-
-    - Through a combination of lectures, discussions, and assignments, students will gain a deep understanding of the fundamental principles governing learning algorithms. The course will equip students with the necessary theoretical foundations to conduct cutting-edge research in theoretical machine learning, as well as to develop novel and effective machine learning solutions for real-world problems.
+    This course discusses advanced topics in theoretical machine learning, extending beyond the scope of foundational graduate courses. The primary goal is to introduce key concepts not covered in basic ML courses such as Foundations of Machine Learning, while also exploring cutting-edge learning problems that can serve as a springboard for research or the development of novel application-relevant techniques. 
+    
+    A central focus of the course is a rigorous analysis of the rich field of online learning. In addition, the material encompasses a broad range of advanced topics in supervised learning, providing a comprehensive overview of the theoretical underpinnings of modern machine learning methods. 
+    
+    Through a combination of lectures, discussions, and assignments, students will gain a deep understanding of the fundamental principles governing learning algorithms. The course will equip students with the necessary theoretical foundations to conduct cutting-edge research in theoretical machine learning, as well as to develop novel and effective machine learning solutions for real-world problems. The course will describe in detail the following topics: 
 
     - On-line learning scenario:
       - On-line learning basics
