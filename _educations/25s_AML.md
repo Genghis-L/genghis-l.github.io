@@ -61,7 +61,7 @@ grade:
   total: "3.00"
 ---
 
-This is a graduate-level course at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU.
+This is a graduate-level course at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU. Following the fall semester course: [Foundations of Machine Learning](https://genghis-l.github.io/educations/24f_FoML/). 
 
 {% include educations/course_information.md %}
 {% include educations/gradebook.md %}
