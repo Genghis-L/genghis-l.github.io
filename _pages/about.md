@@ -2,11 +2,11 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href="https://shanghai.nyu.edu/">NYU Shanghai</a>. Junior Undergraduate. Honors Mathematics & Data Science.
+subtitle: <a href="https://shanghai.nyu.edu/">NYU Shanghai</a>. Senior Undergraduate. Honors Mathematics & Data Science(AI).
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile/pic1.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Email: kl4747@nyu.edu</p>
