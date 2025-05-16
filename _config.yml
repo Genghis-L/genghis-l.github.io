@@ -154,6 +154,9 @@ collections:
   educations:
     output: true
     permalink: /:collection/:title/
+  photos:
+    output: true
+    permalink: /:collection/:title/
 
 announcements:
   enabled: true
@@ -639,3 +642,27 @@ jsonresume:
   - languages
   - interests
   - references
+
+# Nav bar order
+nav_order:
+  - title: About
+    url: /
+    nav_order: 1
+  - title: Blog
+    url: /blog/
+    nav_order: 2
+  - title: Projects
+    url: /projects/
+    nav_order: 3
+  - title: Photos
+    url: /photos/
+    nav_order: 4
+  - title: Education
+    url: /education/
+    nav_order: 5
+  - title: Repositories
+    url: /repositories/
+    nav_order: 6
+  - title: CV
+    url: /cv/
+    nav_order: 7
