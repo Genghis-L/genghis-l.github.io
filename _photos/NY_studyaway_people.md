@@ -38,6 +38,13 @@ These photos capture moments with people I met while studying away at New York U
 <div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
+      path="assets/img/photos/people/Mohri.png"
+      class="img-fluid rounded z-depth-1"
+      zoomable=true
+    %}
+  </div>
+  <div class="col-sm-4">
+    {% include figure.liquid
       path="assets/img/photos/people/Jiequn.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
@@ -50,6 +57,9 @@ These photos capture moments with people I met while studying away at New York U
       zoomable=true
     %}
   </div>
+</div>
+
+<div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
       path="assets/img/photos/people/Kai.png"
