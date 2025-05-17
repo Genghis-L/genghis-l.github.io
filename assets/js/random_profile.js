@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Random profile script loaded");
   // Get all available profile images
   const profileImages = [
-    "profile/prof_pic_1.jpg",
-    "profile/prof_pic_2.jpg", // Make sure these files exist in assets/img/profile/
+    "prof_pic_1.jpg",
+    "prof_pic_2.jpg", // Make sure these files exist in assets/img/profile/
   ];
 
   console.log("Available profile images:", profileImages);
