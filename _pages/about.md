@@ -6,7 +6,7 @@ subtitle: <a href="https://shanghai.nyu.edu/">NYU Shanghai</a>. Senior Undergrad
 
 profile:
   align: right
-  gif_url: https://signavatar.com/79237_v.gif
+  gif_url: https://signavatar.com/79961_v.gif 
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Email: kl4747@nyu.edu</p>
