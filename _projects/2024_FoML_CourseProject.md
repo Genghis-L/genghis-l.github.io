@@ -2,7 +2,7 @@
 layout: distill
 title: Adversarial Robustness Theory and Algorithms
 description: CSCI-GA.2566 Foundations of Machine Learning Course Project
-img: assets/img/projects/2024_FoML_CourseProject.webp
+img: assets/img/projects/2024_FoML_CourseProject.png
 importance: 3 # 1～5
 category: Data Science
 giscus_comments: true

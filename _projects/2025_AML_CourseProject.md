@@ -1,8 +1,8 @@
 ---
 layout: distill
-title:
-description:
-img: assets/img/projects/
+title: Stochastic Convex Optimization - Learnability, Stability and Gradient Descent
+description: CSCI-GA. 3033 Advanced Machine Learning Course Project
+img: assets/img/projects/2025_AML_CourseProject.png
 importance: 2 # 1～5
 category: Data Science
 giscus_comments: true

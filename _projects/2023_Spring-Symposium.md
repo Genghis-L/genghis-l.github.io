@@ -2,7 +2,7 @@
 layout: distill
 title: Unveiling the Roots of Matrices - A Generalization and Field Extension of the Square Root of Matrices
 description: 2023 Spring Symposium
-img: assets/img/projects/2023_Spring-Symposium.webp
+img: assets/img/projects/2023_Spring-Symposium.png
 importance: 1 # 1～5
 category: Mathematics
 giscus_comments: true
