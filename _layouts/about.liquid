@@ -20,16 +20,33 @@ layout: default
   <article>
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
+        {% if page.profile.gif_url %}
+          <!-- Direct GIF URL support -->
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+          {% include figure.liquid loading="eager" path=page.profile.gif_url class=profile_image_class sizes=sizes alt="Profile Picture" cache_bust=false id="profile-image"
+          %}
+        {% elsif page.profile.random_image %}
+          {% assign profile_image_path = 'assets/img/profile/prof_pic_1.jpg' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+          {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt="Profile Picture" cache_bust=true id="profile-image" %}
+        {% elsif page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-                                                              rounded' %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
           {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image cache_bust=true id="profile-image" %}
         {% endif %}
         {% if page.profile.more_info %}
@@ -87,8 +104,7 @@ layout: default
       <script
         type="text/javascript"
         id="mapmyvisitors"
-        src="https://mapmyvisitors.com/map.js?cl=b3c6db&w=238&t=tt&d=pcYl_UrPz9_2MJk797BU7V-7y9v8IX--FJ6vE2I9EeY&co=eaeaed&ct=000000"
-      ></script>
+        src="https://mapmyvisitors.com/map.js?cl=b3c6db&w=238&t=tt&d=pcYl_UrPz9_2MJk797BU7V-7y9v8IX--FJ6vE2I9EeY&co=eaeaed&ct=000000"></script>
     </div>
 
     {% if site.newsletter.enabled and site.footer_fixed %}
@@ -96,3 +112,7 @@ layout: default
     {% endif %}
   </article>
 </div>
+
+{% if page.profile.random_image %}
+  {% include profile_image_randomizer.html %}
+{% endif %}

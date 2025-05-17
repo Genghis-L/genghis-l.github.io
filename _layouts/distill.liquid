@@ -115,11 +115,12 @@
       <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | relative_url }}"></d-bibliography>
 
       {% if site.disqus_shortname and page.disqus_comments %}
-        {% include disqus.liquid %}{% endif %}
+        {% include disqus.liquid -%}
+      {%- endif %}
       {% if site.giscus.repo and page.giscus_comments %}
         {% include giscus.liquid %}
       {% endif %}
-  </div>
+    </div>
 
     <!-- Footer -->
     {% include footer.liquid %}
@@ -129,7 +130,8 @@
       <script
         src="{{ site.third_party_libraries.medium_zoom.url.js }}"
         integrity="{{ site.third_party_libraries.medium_zoom.integrity.js }}"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"
+      ></script>
       <script src="{{ '/assets/js/zoom.js' | relative_url | bust_file_cache }}"></script>
     {% endif %}
 
