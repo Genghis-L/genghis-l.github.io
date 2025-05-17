@@ -22,15 +22,15 @@ display_categories: [Travel, People]
   {% if page.horizontal %}
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
-    {% for photo in sorted_photos %}
-      {% include projects_horizontal.liquid project=photo %}
+    {% for project in sorted_photos %}
+      {% include projects_horizontal.liquid project=project %}
     {% endfor %}
     </div>
   </div>
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">
-    {% for photo in sorted_photos %}
-      {% include projects.liquid %}
+    {% for project in sorted_photos %}
+      {% include projects.liquid project=project %}
     {% endfor %}
   </div>
   {% endif %}
@@ -48,15 +48,15 @@ display_categories: [Travel, People]
 
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
-    {% for photo in sorted_photos %}
-      {% include projects_horizontal.liquid project=photo %}
+    {% for project in sorted_photos %}
+      {% include projects_horizontal.liquid project=project %}
     {% endfor %}
     </div>
   </div>
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">
-    {% for photo in sorted_photos %}
-      {% include projects.liquid %}
+    {% for project in sorted_photos %}
+      {% include projects.liquid project=project %}
     {% endfor %}
   </div>
   {% endif %}
