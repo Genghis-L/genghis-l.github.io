@@ -2,14 +2,12 @@
 layout: page
 title: NYU Study Away | People
 description: People I met during my NYU study away at Junior undergraduate year
-img: assets/img/photos/NYC.jpg
+img: assets/img/photos/Courant.png
 importance: 5
 category: People
 ---
 
 These photos capture moments with people I met while studying away at New York University.
-
-{% if page.img %}
 
 <div class="row mt-3">
   <div class="col-sm-4">
@@ -75,4 +73,3 @@ These photos capture moments with people I met while studying away at New York U
     %}
   </div>
 </div>
-{% endif %}

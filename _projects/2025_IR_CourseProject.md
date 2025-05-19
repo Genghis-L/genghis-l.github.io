@@ -42,10 +42,10 @@ shortcuts:
 
 ## Overview
 
-Efficient sampling from complex, high-dimensional probability distributions remains a central challenge in computational statistics and machine learning. 
-In this report, we present a comprehensive treatment of Hamiltonian Monte Carlo (HMC), an advanced Markov Chain Monte Carlo (MCMC) technique that leverages Hamiltonian dynamics to propose distant, low-autocorrelation moves in the target distribution. 
-We begin by introducing the HMC algorithm—momentum augmentation, leapfrog integration, and the Metropolis acceptance step—and discuss its key theoretical properties, including reversibility, symplecticity, and near-conservation of the Hamiltonian. 
-We then relate HMC to overdamped and underdamped Langevin dynamics and survey important extensions such as the No-U-Turn Sampler (NUTS) and Riemannian Manifold HMC. 
-Through a series of experiments on Gaussian and “Donut” distributions across varying dimensions, as well as comparisons of integrators, kinetic energy functions, and proposal schemes, we empirically demonstrate HMC’s superior effective sample size and acceptance rates relative to Random-Walk Metropolis, albeit at higher computational cost. 
-Finally, we discuss practical considerations, limitations—such as tuning requirements and gradient dependence—and outline future research directions, including adaptive mass matrices, higher-order integrators, and integration with normalizing flows. 
-Github codes for our experiments can be found [here](https://github.com/Genghis-L/Hamiltonian-Monte-Carlo). See more details in the [report](http://genghis-l.github.io/assets/pdf/projects/2025_IR_CourseProject/HMC_IR25_report.pdf). 
+Efficient sampling from complex, high-dimensional probability distributions remains a central challenge in computational statistics and machine learning.
+In this report, we present a comprehensive treatment of Hamiltonian Monte Carlo (HMC), an advanced Markov Chain Monte Carlo (MCMC) technique that leverages Hamiltonian dynamics to propose distant, low-autocorrelation moves in the target distribution.
+We begin by introducing the HMC algorithm—momentum augmentation, leapfrog integration, and the Metropolis acceptance step—and discuss its key theoretical properties, including reversibility, symplecticity, and near-conservation of the Hamiltonian.
+We then relate HMC to overdamped and underdamped Langevin dynamics and survey important extensions such as the No-U-Turn Sampler (NUTS) and Riemannian Manifold HMC.
+Through a series of experiments on Gaussian and “Donut” distributions across varying dimensions, as well as comparisons of integrators, kinetic energy functions, and proposal schemes, we empirically demonstrate HMC’s superior effective sample size and acceptance rates relative to Random-Walk Metropolis, albeit at higher computational cost.
+Finally, we discuss practical considerations, limitations—such as tuning requirements and gradient dependence—and outline future research directions, including adaptive mass matrices, higher-order integrators, and integration with normalizing flows.
+Github codes for our experiments can be found [here](https://github.com/Genghis-L/Hamiltonian-Monte-Carlo). See more details in the [report](http://genghis-l.github.io/assets/pdf/projects/2025_IR_CourseProject/HMC_IR25_report.pdf).
