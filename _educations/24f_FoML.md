@@ -37,7 +37,7 @@ grade:
   total: "3.00"
 ---
 
-This is a series of undergraduate-graduate-level courses at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU.
+This is a series of undergraduate-graduate-level courses at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU. <a href="https://genghis-l.github.io/educations/25s_AML/">CSCI-GA. 3033 Advanced Machine Learning</a> is a follow-up course on CSCI-GA. 2566 Foudations of Machine Learning. These are all very good courses.
 
 {% include educations/course_information.md %}
 {% include educations/gradebook.md %}

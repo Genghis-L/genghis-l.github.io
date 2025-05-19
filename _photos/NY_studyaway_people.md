@@ -17,6 +17,7 @@ These photos capture moments with people I met while studying away at New York U
       path="assets/img/photos/people/Joan.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
+      caption="With Joan at NYU CDS"
     %}
   </div>
   <div class="col-sm-4">
@@ -24,6 +25,7 @@ These photos capture moments with people I met while studying away at New York U
       path="assets/img/photos/people/Lecun.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
+      caption="Meeting Yann LeCun after his class"
     %}
   </div>
   <div class="col-sm-4">
@@ -31,6 +33,7 @@ These photos capture moments with people I met while studying away at New York U
       path="assets/img/photos/people/Lei.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
+      caption="With Lei at NYU CDS"
     %}
   </div>
 </div>
@@ -41,6 +44,7 @@ These photos capture moments with people I met while studying away at New York U
       path="assets/img/photos/people/Mohri.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
+      caption="With Professor Mohri after his class"
     %}
   </div>
   <div class="col-sm-4">
@@ -48,6 +52,7 @@ These photos capture moments with people I met while studying away at New York U
       path="assets/img/photos/people/Jiequn.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
+      caption="With Jiequn at Flariton"
     %}
   </div>
   <div class="col-sm-4">
@@ -55,6 +60,7 @@ These photos capture moments with people I met while studying away at New York U
       path="assets/img/photos/people/Nikos.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
+      caption="With Nikos after class at Washington Square Park"
     %}
   </div>
 </div>
@@ -65,6 +71,7 @@ These photos capture moments with people I met while studying away at New York U
       path="assets/img/photos/people/Kai.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
+      caption="With Kai at NYU CDS"
     %}
   </div>
 </div>

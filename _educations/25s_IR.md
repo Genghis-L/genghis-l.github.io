@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Inference and Representation
-description: DS-GA. 1005
+description: DS-GA. 1005 / CSCI-GA. 2569
 importance: 4 # 1~5
 category: [Data Science (NYU)]
 pretty_table: true
@@ -56,7 +56,7 @@ course_information:
     - Generative Modeling using Neural Networks
       - Score-based Diffusion and Probability Flows
 
-  Textbook: See the <a href="https://joanbruna.notion.site/ir25">course website</a>.
+  Textbook: Two main good ones are <a href="https://www.amazon.com/Probabilistic-Graphical-Models-Principles-Computation/dp/0262013193">Probabilistic Graphical Models - Principles and Techniques</a> and <a href="https://www.amazon.com/High-Dimensional-Probability-Introduction-Applications-Probabilistic/dp/1108415199">High-Dimensional Probability - An Introduction with Applications in Data Science</a>. The one I like a lot is <a href="https://www.cs.columbia.edu/~blei/fogm/2023F/readings/WainwrightJordan2008.pdf">Graphical models, exponential families, and variational inference</a> which showcases extremely elegant connections between graphical models and variational inference on exponential families. See more in the <a href="https://joanbruna.notion.site/ir25">course website</a>.
 
 grade:
   letter: "A"
@@ -64,7 +64,7 @@ grade:
   total: "3.00"
 ---
 
-This is a graduate-level course at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU. By the way, Joan is fantastic.
+This is a graduate-level course at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU. By the way, Joan is fantastic and this is a very good course.
 
 {% include educations/course_information.md %}
 {% include educations/gradebook.md %}

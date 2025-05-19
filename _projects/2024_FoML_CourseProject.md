@@ -3,7 +3,7 @@ layout: distill
 title: Adversarial Robustness Theory and Algorithms
 description: CSCI-GA.2566 Foundations of Machine Learning Course Project
 img: assets/img/projects/2024_FoML_CourseProject.png
-importance: 3 # 1～5
+importance: 2 # 1～5
 category: Data Science
 giscus_comments: true
 
@@ -25,12 +25,12 @@ authors:
       name: NYU
 
 shortcuts:
-  - name: Slides
-    icon: fa-solid fa-file
-    link: /assets/pdf/projects/2024_FoML_CourseProject/Adversarial_Robustness_Theory_Slides.pdf
   - name: Report
     icon: fa-solid fa-file
     link: /assets/pdf/projects/2024_FoML_CourseProject/Adversarial_Robustness_Theory_Report.pdf
+  - name: Slides
+    icon: fa-solid fa-file
+    link: /assets/pdf/projects/2024_FoML_CourseProject/Adversarial_Robustness_Theory_Slides.pdf
 ---
 
 <d-contents>
@@ -142,7 +142,7 @@ $$
 \mathcal{R}_{\text{nat}}(f) := \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \mathbf{1}_{\{f(\boldsymbol{X}) Y \leq 0\}}
 $$
 
-Note that the two errors satisfy $\mathcal{R}_{\text{rob}}(f) \geq \mathcal{R}_{\text{nat}}(f)$ for all f. The robust error is equal to the natural error when $\epsilon=0$.
+Note that the two errors satisfy $$\mathcal{R}_{\mathrm{rob}}(f) \geq \mathcal{R}_{\mathrm{nat}}(f)$$ for all $f$. The robust error is equal to the natural error when $\epsilon=0$.
 
 Introduce the boundary error defined as:
 
@@ -156,9 +156,11 @@ $$
 \mathcal{R}_{\text{rob}}(f)=\mathcal{R}_{\text{nat}}(f)+\mathcal{R}_{\text{bdy}}(f)
 $$
 
-as the first term $\mathcal{R}_{\text{nat}}(f)$ includes all misclassified points regarding the accuracy, and the second term $\mathcal{R}_{\text{bdy}}(f)$ includes all the points that are classified correctly but within $\mathbb{B}(\mathrm{DB}(f), \epsilon)$, regarding the robustness.
+as the first term $$\mathcal{R}_{\text{nat}}(f)$$ includes all misclassified points regarding the accuracy, and the second term $\mathcal{R}_{\text{bdy}}(f)$ includes all the points that are classified correctly but within $\mathbb{B}(\mathrm{DB}(f), \epsilon)$, regarding the robustness.
 
-There is in fact a trade-off between $\mathcal{R}_{\text{nat}}(f)$ and $\mathcal{R}_{\text{bdy}}(f)$, showcased by the following toy example: Consider the case $(X, Y) \sim \mathcal{D}$, where the marginal distribution over the sample space $\mathcal{X}$ is a uniform distribution over $[0,1]$, and for $k=0,1,\ldots,\left\lceil \frac{1}{2\epsilon} - 1 \right\rceil$,
+There is in fact a trade-off between $$\mathcal{R}_{\text{nat}}(f)$$ and $$\mathcal{R}_{\text{bdy}}(f)$$, showcased by the following toy example:
+
+Consider the case $(X, Y) \sim \mathcal{D}$, where the marginal distribution over the sample space $\mathcal{X}$ is a uniform distribution over $[0,1]$, and for $k=0,1,\ldots,\left\lceil \frac{1}{2\epsilon} - 1 \right\rceil$,
 
 $$
 \begin{aligned}
@@ -183,7 +185,7 @@ The results are shown in Figure 2.
 
 Our goal is then to derive a good upper bound on $\mathcal{R}_{\text{rob}}(f)$ that we want to minimize, in the sense that a free hyper-parameter can be introduced to manipulate the trade-off between accuracy and robustness, and therefore a good algorithm can be derived to minimize this upper bound. We need several tools to achieve this goal.
 
-Introduce the surrogate loss $\mathcal{R}_\phi(f) := \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \phi(f(\boldsymbol{X}) Y)$. Formally, for $\eta \in \[0,1\]$, define the conditional $\phi$-risk by
+Introduce the surrogate loss $$\mathcal{R}_\phi(f) := \mathbb{E}_{(\boldsymbol{X}, Y) \sim \mathcal{D}} \phi(f(\boldsymbol{X}) Y)$$. Formally, for $\eta \in \[0,1\]$, define the conditional $\phi$-risk by
 
 $$
 H(\eta) := \inf_{\alpha \in \mathbb{R}} C_\eta(\alpha) := \inf_{\alpha \in \mathbb{R}}(\eta \phi(\alpha)+(1-\eta) \phi(-\alpha)),
@@ -213,7 +215,7 @@ Under Assumption 1, the function $\psi$ has the following properties: $\psi$ is 
 By using good properties of this $\psi$ transform, we can derive a tight upper bound in the sense of the following two theorems:
 
 **Theorem 3.1** <d-cite key="zhang_theoretically_2019"></d-cite>:
-Let $\mathcal{R}_\phi(f) := \mathbb{E}_\phi[f(\mathbf{X}) Y]$ and $R_\phi^* := \min_f \mathcal{R}_\phi(f)$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
+Let $$\mathcal{R}_\phi(f) := \mathbb{E}_\phi[f(\mathbf{X}) Y]$$ and $$R_\phi^* := \min_f \mathcal{R}_\phi(f)$$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(0) \geq 1$, any measurable $f: \mathcal{X} \rightarrow \mathbb{R}$, any probability distribution on $\mathcal{X} \times\{ \pm 1\}$, and any $\lambda>0$, we have:
 
 $$
 \begin{gathered}
@@ -224,7 +226,7 @@ $$
 $$
 
 **Theorem 3.2** <d-cite key="zhang_theoretically_2019"></d-cite>:
-Suppose that $|\mathcal{X}| \geq 2$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(x) \rightarrow 0$ as $x \rightarrow+\infty$, any $\xi>0$, and any $\theta \in[0,1]$, there exists a probability distribution on $\mathcal{X} \times\{ \pm 1\}$, a function $f: \mathbb{R}^d \rightarrow \mathbb{R}$, and a regularization parameter $\lambda>0$ such that $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*=\theta$ and
+Suppose that $|\mathcal{X}| \geq 2$. Under Assumption 1, for any non-negative loss function $\phi$ such that $\phi(x) \rightarrow 0$ as $x \rightarrow+\infty$, any $\xi>0$, and any $\theta \in[0,1]$, there exists a probability distribution on $\mathcal{X} \times\{ \pm 1\}$, a function $f: \mathbb{R}^d \rightarrow \mathbb{R}$, and a regularization parameter $\lambda>0$ such that $$\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*=\theta$$ and
 
 $$
 \begin{gathered}
@@ -234,7 +236,7 @@ $$
 $$
 
 **TRADES Algorithm** <d-cite key="zhang_theoretically_2019"></d-cite>:
-Optimization on Upper Bound Theorems 3.1 and 3.2 shed light on algorithmic designs of adversarial defenses. In order to minimize $\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*$, the theorems suggest minimizing ${ }^a$
+Optimization on Upper Bound Theorems 3.1 and 3.2 shed light on algorithmic designs of adversarial defenses. In order to minimize $$\mathcal{R}_{\text{rob}}(f)-\mathcal{R}_{\text{nat}}^*$$, the theorems suggest minimizing:
 
 $$
 \min_f \mathbb{E}\{\underbrace{\phi(f(\boldsymbol{X}) Y)}_{\text {for accuracy }}+\underbrace{\max_{\boldsymbol{\boldsymbol { X } ^ { \prime } \in \mathbb { B } ( \boldsymbol { X } , \epsilon )}} \phi\left(f(\boldsymbol{X}) f\left(\boldsymbol{X}^{\prime}\right) / \lambda\right)}_{\text {regularization for robustness }}\}
@@ -261,7 +263,7 @@ $$
 \forall h \in H, \quad \mathcal{R}_{\text{target}}(h) - \mathcal{R}_{\text{target}, H} \leq f(\mathcal{R}_{\phi}(h) - \mathcal{R}_{\phi, H}),
 $$
 
-where $\mathcal{R}_{\text{target}}$ represents the true target loss, $\mathcal{R}_{\phi}$ is the surrogate loss, and $H$ is the hypothesis space. Intuitively, this inequality ensures that the gap between the true target loss and the surrogate loss is bounded by a function of their respective differences. In simpler terms, as the surrogate loss decreases, the true target loss cannot increase within a given set of models $H$. This property is critical for ensuring that adversarial training methods remain effective in practice.
+where $$\mathcal{R}_{\text{target}}$$ represents the true target loss, $\mathcal{R}_{\phi}$ is the surrogate loss, and $H$ is the hypothesis space. Intuitively, this inequality ensures that the gap between the true target loss and the surrogate loss is bounded by a function of their respective differences. In simpler terms, as the surrogate loss decreases, the true target loss cannot increase within a given set of models $H$. This property is critical for ensuring that adversarial training methods remain effective in practice.
 
 However, **TRADES**'s surrogate loss has been shown to fail the $H$-consistency bound in certain scenarios <d-cite key="awasthi_theoretically_2023"></d-cite>, particularly in multi-class classification tasks. In these cases, models optimized with **TRADES** can yield inaccurate predictions despite achieving low surrogate loss values, leading to unfavorable hypothesis being selected.
 

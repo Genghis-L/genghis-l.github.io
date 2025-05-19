@@ -7,7 +7,7 @@ category: [Data Science (NYU)]
 pretty_table: true
 
 shortcuts:
-  - name: CSCI-GA. 3033 Website
+  - name: Website
     icon: fa-solid fa-file
     link: https://cs.nyu.edu/~mohri/aml25/
   - name: Project
@@ -61,7 +61,7 @@ grade:
   total: "3.00"
 ---
 
-This is a graduate-level course at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU. Following the fall semester course: [Foundations of Machine Learning](https://genghis-l.github.io/educations/24f_FoML/).
+This is a graduate-level course at the [Courant Institute of Mathematical Sciences](https://cims.nyu.edu/), NYU. Following the fall semester course: [Foundations of Machine Learning](https://genghis-l.github.io/educations/24f_FoML/). These are very good courses.
 
 {% include educations/course_information.md %}
 {% include educations/gradebook.md %}
