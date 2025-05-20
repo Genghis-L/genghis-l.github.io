@@ -72,4 +72,20 @@ These photos capture moments with people I met while studying away at New York U
       caption="With Kai at NYU CDS"
     %}
   </div>
+  <div class="col-sm-4">
+    {% include figure.liquid
+      path="assets/img/photos/people/Courant.png"
+      class="img-fluid rounded z-depth-1"
+      zoomable=true
+      caption="Hearing Wang Hong's talk on her new discovery"
+    %}
+  </div>
+  <div class="col-sm-4">
+    {% include figure.liquid
+      path="assets/img/photos/people/book.png"
+      class="img-fluid rounded z-depth-1"
+      zoomable=true
+      caption="Warm blessings received from Professor Mohri on his book"
+    %}
+  </div>
 </div>
