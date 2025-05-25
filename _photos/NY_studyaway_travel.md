@@ -12,7 +12,7 @@ These photos capture moments with places I traveled to while studying away at Ne
 <div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/upside-down.png"
+      path="assets/img/photos/travel/NY-studyaway/upside-down.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Upside down"
@@ -20,7 +20,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/waiting.png"
+      path="assets/img/photos/travel/NY-studyaway/waiting.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Waiting..."
@@ -28,7 +28,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/exploded-car.png"
+      path="assets/img/photos/travel/NY-studyaway/exploded-car.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="An exploded car"
@@ -39,7 +39,7 @@ These photos capture moments with places I traveled to while studying away at Ne
 <div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/drink.png"
+      path="assets/img/photos/travel/NY-studyaway/drink.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="need something to drink while studying"
@@ -47,7 +47,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/stone.png"
+      path="assets/img/photos/travel/NY-studyaway/stone.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="A beautiful stone"
@@ -55,7 +55,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/tilt.png"
+      path="assets/img/photos/travel/NY-studyaway/tilt.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="A tilted Mahattan"
@@ -66,7 +66,7 @@ These photos capture moments with places I traveled to while studying away at Ne
 <div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/gate.png"
+      path="assets/img/photos/travel/NY-studyaway/gate.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Christmas gate"
@@ -74,7 +74,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/bridge.png"
+      path="assets/img/photos/travel/NY-studyaway/bridge.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Mahattan bridge"
@@ -82,7 +82,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/cabin.png"
+      path="assets/img/photos/travel/NY-studyaway/cabin.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="A chill cabin"
@@ -93,7 +93,7 @@ These photos capture moments with places I traveled to while studying away at Ne
 <div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/chair-2.png"
+      path="assets/img/photos/travel/NY-studyaway/chair-2.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Chair for thought and lake"
@@ -101,7 +101,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/einstein-house.png"
+      path="assets/img/photos/travel/NY-studyaway/einstein-house.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Einstein's house"
@@ -109,7 +109,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/princeton-dusk.png"
+      path="assets/img/photos/travel/NY-studyaway/princeton-dusk.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="dusk @ Princeton "
@@ -120,7 +120,7 @@ These photos capture moments with places I traveled to while studying away at Ne
 <div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/chair-1.png"
+      path="assets/img/photos/travel/NY-studyaway/chair-1.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Chair for daydream and snow"
@@ -128,7 +128,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/turtle.png"
+      path="assets/img/photos/travel/NY-studyaway/turtle.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="turtle @ Galápagos"
@@ -136,7 +136,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/fruits.png"
+      path="assets/img/photos/travel/NY-studyaway/fruits.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="fruits @ Ecuador"
@@ -147,7 +147,7 @@ These photos capture moments with places I traveled to while studying away at Ne
 <div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/church.png"
+      path="assets/img/photos/travel/NY-studyaway/church.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="church at dusk"
@@ -155,7 +155,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/castle.png"
+      path="assets/img/photos/travel/NY-studyaway/castle.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="swim across the castle"
@@ -163,7 +163,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/board.png"
+      path="assets/img/photos/travel/NY-studyaway/board.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="A written blackboard"
@@ -174,7 +174,7 @@ These photos capture moments with places I traveled to while studying away at Ne
 <div class="row mt-3">
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/mahattan-dusk.png"
+      path="assets/img/photos/travel/NY-studyaway/mahattan-dusk.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Mahattan dusk"
@@ -182,7 +182,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/mahattan-night-1.png"
+      path="assets/img/photos/travel/NY-studyaway/mahattan-night-1.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Mahattan night"
@@ -190,7 +190,7 @@ These photos capture moments with places I traveled to while studying away at Ne
   </div>
   <div class="col-sm-4">
     {% include figure.liquid
-      path="assets/img/photos/travel/mahattan-night-2.png"
+      path="assets/img/photos/travel/NY-studyaway/mahattan-night-2.png"
       class="img-fluid rounded z-depth-1"
       zoomable=true
       caption="Mahattan night again!"
