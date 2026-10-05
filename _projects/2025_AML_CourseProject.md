@@ -16,7 +16,7 @@ authors:
     affiliations:
       name: NYU Shanghai
   - name: Nikolaos Tsilivis
-    url: "https://cims.nyu.edu/~nt2231/page.html"
+    url: "https://nikos.ttic.edu/"
     email: nt2231@nyu.edu
     affiliations:
       name: NYU
