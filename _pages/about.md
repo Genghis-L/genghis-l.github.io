@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href="https://shanghai.nyu.edu/">NYU Shanghai</a>. Senior Undergraduate. Honors Mathematics & Data Science(AI).
+subtitle: PhD Student in Statistics and Data Science. <a href="https://statistics.northwestern.edu/">Northwestern University</a>.
 
 profile:
   align: right
@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Email: kl4747@nyu.edu</p>
-    <p>Shanghai, New York</p>
+    <p>Northwestern University</p>
 
 news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -19,6 +19,9 @@ social: false # includes social icons at the bottom of the page
 
 {% include social_inline.liquid %}
 
-My name is Kehan(Genghis) Luo (骆可瀚), and I am currently a senior undergraduate at <a href="https://shanghai.nyu.edu/">NYU Shanghai</a>, pursuing a double major in Honors Mathematics and Data Science(AI track).
-I am deeply passionate about the future of machine learning and have conducted research in areas such as diffusion models, high-dimensional sampling, and learning theory, exploring both theoretical and practical approaches.
-Additionally, I am highly interested in applying machine learning techniques to various fields including medical treatment, finance, etc.
+My name is Kehan (Genghis) Luo (骆可瀚), and I am a PhD student in Statistics and Data Science at <a href="https://statistics.northwestern.edu/">Northwestern University</a>.
+I graduated from <a href="https://shanghai.nyu.edu/">NYU Shanghai</a> with a double major in Honors Mathematics and Data Science (AI track).
+
+My research interests lie in the mathematical foundations of machine learning, especially optimization, high-dimensional sampling, and optimal transport.
+I have conducted research in diffusion models, high-dimensional sampling, and learning theory, exploring both theoretical and practical approaches.
+I am also interested in applications of machine learning to medicine and finance.
