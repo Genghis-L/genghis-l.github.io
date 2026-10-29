@@ -29,7 +29,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2.2"
+          # Follow patch releases so newer hosted runners have a matching Ruby build.
+          ruby-version: "3.2"
           bundler-cache: true
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
