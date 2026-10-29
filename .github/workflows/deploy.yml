@@ -24,7 +24,8 @@ jobs:
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3.5"
+          # Follow patch releases so newer hosted runners have a matching Ruby build.
+          ruby-version: "3.3"
           bundler-cache: true
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
