@@ -1,30 +1,17 @@
-{% assign repo_url = include.repository | split: '/' %}
-{% if site.data.repositories.github_users contains repo_url.first %}
-  {% assign show_owner = false %}
-{% else %}
-  {% assign show_owner = true %}
-{% endif %}
-
-{% if site.data.repositories.repo_description_lines_max %}
-  {% assign max_lines = site.data.repositories.repo_description_lines_max %}
-{% else %}
-  {% assign max_lines = 2 %}
-{% endif %}
-
-<div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.repository }}">
-    <img
-      onerror="this.hidden = true;"
-      class="only-light w-100"
-      alt="{{ include.repository }}"
-      src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_light }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
-    >
-    <img
-      onerror="this.hidden = true;"
-      class="only-dark w-100"
-      alt="{{ include.repository }}"
-      src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_dark }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
-    >
-    <span class="d-block">{{ include.repository }}</span>
+{% assign repo_name = include.repository | split: '/' | last %}
+{% assign card = site.data.repository_cards.repositories[include.repository] %}
+<div class="repo repo-local p-2">
+  <a class="repo-card" href="https://github.com/{{ include.repository }}">
+    <span class="repo-card-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> {{ repo_name | escape }}</span>
+    <span class="repo-card-owner">{{ include.repository | escape }}</span>
+    <span class="repo-card-description">{{ card.description | default: 'Explore this repository on GitHub.' | escape }}</span>
+    {% if card %}
+      <span class="repo-card-metrics">
+        <span>{{ card.language | escape }}</span>
+        <span><i class="fa-regular fa-star" aria-hidden="true"></i> Stars: {{ card.stars }}</span>
+        <span><i class="fa-solid fa-code-fork" aria-hidden="true"></i> Forks: {{ card.forks }}</span>
+      </span>
+      <span class="repo-card-updated">GitHub snapshot · {{ site.data.repository_cards.checked_on | escape }}</span>
+    {% endif %}
   </a>
 </div>
