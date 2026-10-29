@@ -1,0 +1,13 @@
+# Verified public GitHub repository metadata; these are dated snapshots, not live counters.
+checked_on: "October 29, 2026"
+repositories:
+  Genghis-L/Hamiltonian-Monte-Carlo:
+    description: "2025 Spring | DS-GA.1005 Inference and Representation"
+    language: Python
+    stars: 1
+    forks: 0
+  Genghis-L/Large-scale-sampler-evaluation:
+    description: "Large-scale sampler evaluation based on PDDS"
+    language: Jupyter Notebook
+    stars: 0
+    forks: 0

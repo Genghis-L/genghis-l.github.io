@@ -9,7 +9,7 @@ nav_order: 5
 
 {% if site.data.repositories.github_users %}
 
-## GitHub Statistics
+## GitHub Profile
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column align-items-center">
   {% for user in site.data.repositories.github_users %}
